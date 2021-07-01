@@ -7,6 +7,7 @@
 		"dotjoshjohnson.xml",
 		"vscjava.vscode-maven",
 		"vscjava.vscode-java-pack",
-		"redhat.fabric8-analytics"
+		"redhat.fabric8-analytics",
+		"mhutchie.git-graph"
 	]
 }

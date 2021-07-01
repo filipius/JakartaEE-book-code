@@ -31,10 +31,6 @@
       <artifactId>servlet</artifactId>
       <type>war</type>
     </dependency>
-    <!-- <dependency>
-      <groupId>book</groupId>
-      <artifactId>logging</artifactId>
-    </dependency> -->
   </dependencies>
 
   <build>
@@ -42,14 +38,6 @@
       <plugin>
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
-<!--        <configuration>
-          <skip>false</skip>
-          <hostname>wildfly</hostname>
-          <port>9990</port>
-          <filename>${project.name}-${project.version}.jar</filename>
-          <username>admin</username>
-          <password>admin#7rules</password>
-        </configuration> -->
       </plugin> 
 
       <plugin>
