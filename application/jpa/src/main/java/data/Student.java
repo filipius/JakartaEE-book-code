@@ -1,31 +1,33 @@
-package play.jpa;
+package data;
 
 import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Professor
+ * Entity implementation class for Entity: Student
  *
  */
 @Entity
-
-public class Professor implements Serializable {	
+public class Student implements Serializable {	
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String nome;
-	@OneToMany(mappedBy="prof")
-	private List<Student> students;
+	@ManyToOne
+	private Professor prof;
 
-	public Professor() {
+	public Student() {
 		super();
 	}
 
-	public Professor(String string) {
+	public Student(String nome) {
+		this.nome = nome;
+	}
+
+	public Student(String string, Professor professor) {
 		this.nome = string;
+		this.prof = professor;
 	}
 
 	public int getId() {
@@ -44,12 +46,12 @@ public class Professor implements Serializable {
 		this.nome = nome;
 	}
 
-	public List<Student> getStudents() {
-		return students;
+	public Professor getProf() {
+		return prof;
 	}
 
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
+	public void setProf(Professor prof) {
+		this.prof = prof;
+	}	
    
 }

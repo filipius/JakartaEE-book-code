@@ -1,7 +1,5 @@
 package ejb;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import jakarta.ejb.Stateless;
@@ -9,11 +7,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
-import data.Player;
-import data.Team;
+import data.Student;
+import data.Professor;
 
 
-public class ManageProfessor {
+
+@Stateless
+public class ManageProfessors {
     @PersistenceContext(name="playAula")
     EntityManager em;
 
@@ -25,4 +25,15 @@ public class ManageProfessor {
     public boolean isProfessor(Student s, Professor p) {
         return s.getProf() == p;
     }
+
+    public List<Professor> getProfessors() {
+        Query q = em.createQuery("from Professor p");
+        List<Professor> list = q.getResultList();
+        return list;
+    }
+
+    public List<Student> getStudents(Professor p) {
+        return p.getStudents();
+    }
+
 }

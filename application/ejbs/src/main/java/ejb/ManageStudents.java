@@ -1,8 +1,15 @@
 package ejb;
 
-import javax.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import java.util.List;
 
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+import data.Student;
+import data.Professor;
+
+@Stateless
 public class ManageStudents {
     @PersistenceContext(name="playAula")
     EntityManager em;
@@ -13,6 +20,12 @@ public class ManageStudents {
     }
 
     public void addProfessor(Student s, Professor p) {
-        s.addProfessor(p);
+        s.setProf(p);
+    }
+
+    public List<Student> getStudents() {
+        Query q = em.createQuery("from Student s");
+        List<Student> list = q.getResultList();
+        return list;
     }
 }

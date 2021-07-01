@@ -15,14 +15,6 @@
   <name>jpa</name>
 
   <dependencies>
-    <!-- <dependency>
-      <groupId>book</groupId>
-      <artifactId>primary-source</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>book</groupId>
-      <artifactId>logging</artifactId>
-    </dependency> -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

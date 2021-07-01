@@ -5,22 +5,12 @@
 	<persistence-unit name="playAula">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<jta-data-source>java:/PostgresDS</jta-data-source>
-		<class>play.jpa.Student</class>
-		<class>play.jpa.Professor</class>
 		<properties>
-			<!-- <property name="javax.persistence.jdbc.user"
-				value="postgres"/>
-			<property name="javax.persistence.jdbc.password"
-				value="pa$$w0rd-Muit0%difici1" /> -->
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.PostgreSQLDialect" />
 			<!-- table generation policies: validate, update, create, create-drop -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
-			<!-- <property name="javax.persistence.jdbc.driver"
-				value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://database/playersandteams" /> -->
 		</properties>
 
 	</persistence-unit>
