@@ -1,7 +1,0 @@
-{
-    "name": "java",
-    "image": "maven:3-openjdk-17",
-    "mounts": ["source=/Users/filipius/tmp/kafka_2.13-2.8.0,target=/workspace/kafka,type=bind,consistency=cached"],
-    "workspaceFolder": "/workspace",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-}
