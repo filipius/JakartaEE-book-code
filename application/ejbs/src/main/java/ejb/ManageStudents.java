@@ -2,6 +2,7 @@ package ejb;
 
 import java.util.List;
 
+import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -10,6 +11,7 @@ import data.Student;
 import data.Professor;
 
 @Stateless
+@LocalBean
 public class ManageStudents {
     @PersistenceContext(name="playAula")
     EntityManager em;
