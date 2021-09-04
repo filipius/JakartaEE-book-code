@@ -17,6 +17,10 @@ public class ManageProfessors {
     @PersistenceContext(name="playAula")
     EntityManager em;
 
+    public ManageProfessors() {
+        System.out.println("Test-------------------------------------------------");
+    }
+
     public void addProfessor(String name) {
         Professor p = new Professor(name);
         em.persist(name);
