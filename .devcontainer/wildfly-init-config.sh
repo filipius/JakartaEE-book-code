@@ -1,7 +1,7 @@
 #! /bin/sh
 
 #start wildfly
-/opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
+/opt/jboss/wildfly/bin/standalone.sh -c standalone-full.xml -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 #install the driver and the data source
 #the challenge is to have the server ready---it may take a while
