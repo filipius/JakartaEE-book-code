@@ -16,7 +16,7 @@ public class FavoriteTeam {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Players");
 		EntityManager em = emf.createEntityManager();
 		Query q = em.createQuery("from Team t where t.name = :t");
-		q.setParameter("t", "Académica");
+		q.setParameter("t", "Academica");
 		@SuppressWarnings("unchecked")
 		List<Team> resultteams = q.getResultList();
 		if (resultteams.size() > 0)
