@@ -24,7 +24,7 @@ public class WriteData {
  }
 
  public static void main(String[] args) {
-  Team [] teams = { new Team("Sporting", "Alvalade", "Silva"), new Team("Académica", "Coimbra", "Santos"), new Team("Porto", "Dragão", "Moreira"), new Team("Benfica", "Luz", "Martins") };
+  Team [] teams = { new Team("Sporting", "Alvalade", "Silva"), new Team("Academica", "Coimbra", "Santos"), new Team("Porto", "Dragao", "Moreira"), new Team("Benfica", "Luz", "Martins") };
   Player [] players = { 
     new Player("Albino", getDate(23,4,1987), 1.87f, teams[0]), 
     new Player("Bernardo", getDate(11,4,1987), 1.81f, teams[0]), 
