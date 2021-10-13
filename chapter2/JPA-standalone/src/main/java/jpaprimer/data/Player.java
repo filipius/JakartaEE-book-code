@@ -12,12 +12,18 @@ import javax.persistence.*;
 @Entity
 public class Player implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
 	private String name;
+	
 	@Temporal(TemporalType.DATE)
 	private Date birth;
+	
 	private float height;
+	
 	@ManyToOne
 	private Team team;
 

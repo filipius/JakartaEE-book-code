@@ -14,11 +14,16 @@ import javax.persistence.OneToMany;
 public class Team implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
+	
 	private String name;
+	
 	private String address;
+	
 	private String chairman;
+	
 	@OneToMany(mappedBy="team")
 	private List<Player> players;
 
