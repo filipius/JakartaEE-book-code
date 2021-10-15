@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import beans.ManageStudents;
+import beans.IManageStudents;
 import data.Student;
 
 @RequestScoped
@@ -20,7 +20,7 @@ import data.Student;
 public class MyService {
 
 	@EJB
-	private ManageStudents manageStudents;
+	private IManageStudents manageStudents;
 	
 	@GET
 	@Path("/test")

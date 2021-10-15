@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>book</groupId>
 			<artifactId>jpa</artifactId>
-			<type>ejb</type>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>book</groupId>
@@ -26,24 +26,13 @@
 			<groupId>book</groupId>
 			<artifactId>web</artifactId>
 			<type>war</type>
+			<version>1</version>
 		</dependency>
 		<dependency>
 			<groupId>book</groupId>
 			<artifactId>rest</artifactId>
+			<version>1</version>
 			<type>war</type>
 		</dependency>
 	</dependencies>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.wildfly.plugins</groupId>
-					<artifactId>wildfly-maven-plugin</artifactId>
-					<configuration>
-						<skip>false</skip>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
 </project>

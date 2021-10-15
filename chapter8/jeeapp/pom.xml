@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> 	
   <modelVersion>4.0.0</modelVersion>
-  <groupId>book</groupId>
+  <groupId>book</groupId>  	
   <artifactId>jeeapp</artifactId>
   <version>1</version>
   <packaging>pom</packaging>
   <name>Jakarta EE Application</name>
-  
   <modules>
-    <module>jpa</module>
     <module>ejbs</module>
+    <module>jpa</module>
+    <module>ear</module>
     <module>rest</module>
     <module>web</module>
-    <module>ear</module>
   </modules>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>16</maven.compiler.source>
     <maven.compiler.target>16</maven.compiler.target>
     <java.version>16</java.version>
     <wildfly-plugin-version>2.1.0.Beta1</wildfly-plugin-version>
-    <hibernate.validator.version>6.0.2.Final</hibernate.validator.version>
-    <hibernatecore.version>5.2.11.Final</hibernatecore.version>
-    <hibernate.commons.annotations.version>5.0.1.Final</hibernate.commons.annotations.version>
-    <hibernate.jpa.api>1.0.1.Final</hibernate.jpa.api>
   </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -40,19 +32,7 @@
         <groupId>book</groupId>
         <artifactId>jpa</artifactId>
         <version>1</version>
-        <type>ejb</type>
-      </dependency>
-      <dependency>
-        <groupId>book</groupId>
-        <artifactId>rest</artifactId>
-        <version>1</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>book</groupId>
-        <artifactId>web</artifactId>
-        <version>1</version>
-        <type>war</type>
+        <type>jar</type>
       </dependency>
       <dependency>
         <groupId>jakarta.platform</groupId>
@@ -60,78 +40,10 @@
         <version>8.0.0</version>
         <scope>provided</scope>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-bom -->
-      <dependency>
-        <groupId>jakarta.platform</groupId>
-        <artifactId>jakarta.jakartaee-bom</artifactId>
-        <version>8.0.0</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>6.1.0.Alpha6</version>
-      </dependency>
-      <dependency>
-        <groupId>org.hibernate.javax.persistence</groupId>
-        <artifactId>hibernate-jpa-2.1-api</artifactId>
-        <version>1.0.2.Final</version>
-      </dependency>
-      <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-        <version>2.0.0.Final</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-core</artifactId>
-        <version>${hibernatecore.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
-      <dependency>
-        <groupId>org.hibernate.validator</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>${hibernate.validator.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
-      <dependency>
-        <groupId>org.hibernate.common</groupId>
-        <artifactId>hibernate-commons-annotations</artifactId>
-        <version>${hibernate.commons.annotations.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-entitymanager</artifactId>
-        <version>5.5.7.Final</version>
-      </dependency>
-      <dependency>
-        <groupId>javax.enterprise</groupId>
-        <artifactId>cdi-api</artifactId>
-        <version>2.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-jpamodelgen</artifactId>
-        <version>5.2.11.Final</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.hibernate.validator</groupId>
-        <artifactId>hibernate-validator-cdi</artifactId>
-        <version>7.0.1.Final</version>
-        <scope>provided</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
-    <finalName>${project.parent.artifactId}</finalName>
+	<finalName>${project.parent.artifactId}</finalName>  
     <pluginManagement>
       <plugins>
         <plugin>
@@ -142,42 +54,48 @@
             <skip>false</skip>
             <hostname>wildfly</hostname>
             <port>9990</port>
-            <filename>jeeapp.ear</filename>
+            <filename>ear-1.ear</filename>
             <username>admin</username>
             <password>admin#7rules</password>
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
+        </plugin>		
+        <plugin>			
+          <artifactId>maven-compiler-plugin</artifactId>			
           <version>3.8.0</version>
-          <configuration>
-            <source>${java.version}</source>
+          <configuration>	
+            <source>${java.version}</source>			
             <target>${java.version}</target>
           </configuration>
         </plugin>
-        <plugin>
+        <plugin>          					
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
+        <plugin>			
+          <artifactId>maven-war-plugin</artifactId>			
           <version>3.2.2</version>
-          <configuration>
-            <failOnMissingWebXml>false</failOnMissingWebXml>
+          <configuration>	
+            <failOnMissingWebXml>false</failOnMissingWebXml>		
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-ear-plugin</artifactId>
-          <version>3.2.0</version>
-        </plugin>
-        <plugin>
+        </plugin>		
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<!-- Use simple names for ear packaging -->
+					<outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<outputDirectory>/Users/nuno/Documents/tech/wildfly-24.0.1.Final/standalone/deployments</outputDirectory>
+				</configuration>
+			</plugin>
+        <plugin>          					
           <artifactId>maven-ejb-plugin</artifactId>
           <version>3.0.1</version>
-        </plugin>
+        </plugin>        				
         <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
+          <artifactId>maven-deploy-plugin</artifactId>			
+          <version>2.8.2</version>		
+        </plugin>        			
       </plugins>
     </pluginManagement>
   </build>
