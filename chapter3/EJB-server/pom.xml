@@ -14,7 +14,7 @@
     	<maven.compiler.source>16</maven.compiler.source>
     	<maven.compiler.target>16</maven.compiler.target>
     	<java.version>16</java.version>        
-        <deployLocation>/Users/nuno/Documents/tech/wildfly-24.0.1.Final/standalone/deployments</deployLocation>
+        <deployLocation>../lixo</deployLocation>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
@@ -76,7 +76,7 @@
                 <artifactId>maven-ejb-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                	<outputDirectory>${deployLocation}</outputDirectory>
+                	<!-- <outputDirectory>${deployLocation}</outputDirectory> -->
                     <ejbVersion>3.1</ejbVersion>
                 </configuration>
             </plugin>
