@@ -85,7 +85,7 @@
 					<!-- Use simple names for ear packaging -->
 					<outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
-					<outputDirectory>/Users/nuno/Documents/tech/wildfly-24.0.1.Final/standalone/deployments</outputDirectory>
+					<outputDirectory>${output}</outputDirectory>
 				</configuration>
 			</plugin>
         <plugin>          					
