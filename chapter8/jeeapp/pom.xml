@@ -54,7 +54,7 @@
             <skip>false</skip>
             <hostname>wildfly</hostname>
             <port>9990</port>
-            <filename>${project.artifactId}.ear</filename>
+            <filename>${project.parent.artifactId}.ear</filename>
             <username>admin</username>
             <password>admin#7rules</password>
           </configuration>
