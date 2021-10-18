@@ -10,8 +10,7 @@
 	<name>simpleweb Maven Webapp</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>13</maven.compiler.source>
-		<maven.compiler.target>13</maven.compiler.target>
+		<maven.compiler.release>16</maven.compiler.release>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,7 +39,20 @@
 					<version>3.2.2</version>
 					<configuration>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
-						<outputDirectory>/Users/nuno/Documents/tech/wildfly-21.0.0.Final/standalone/deployments</outputDirectory>
+						<outputDirectory>${output}</outputDirectory>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>${wildfly-plugin-version}</version>
+					<configuration>
+						<skip>false</skip>
+						<hostname>wildfly</hostname>
+						<port>9990</port>
+						<username>admin</username>
+						<password>admin#7rules</password>
+						<filename>${project.artifactId}.war</filename>
 					</configuration>
 				</plugin>
 			</plugins>

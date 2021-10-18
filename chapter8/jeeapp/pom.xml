@@ -15,9 +15,7 @@
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>16</maven.compiler.source>
-    <maven.compiler.target>16</maven.compiler.target>
-    <java.version>16</java.version>
+    <maven.compiler.release>16</maven.compiler.release>
     <wildfly-plugin-version>2.1.0.Beta1</wildfly-plugin-version>
   </properties>
   <dependencyManagement>
@@ -43,7 +41,7 @@
     </dependencies>
   </dependencyManagement>
   <build>
-	<finalName>${project.parent.artifactId}</finalName>  
+	<finalName>${project.artifactId}</finalName>  
     <pluginManagement>
       <plugins>
         <plugin>
@@ -54,7 +52,7 @@
             <skip>false</skip>
             <hostname>wildfly</hostname>
             <port>9990</port>
-            <filename>${project.parent.artifactId}.ear</filename>
+            <filename>${project.artifactId}.ear</filename>
             <username>admin</username>
             <password>admin#7rules</password>
           </configuration>
@@ -62,10 +60,6 @@
         <plugin>			
           <artifactId>maven-compiler-plugin</artifactId>			
           <version>3.8.0</version>
-          <configuration>	
-            <source>${java.version}</source>			
-            <target>${java.version}</target>
-          </configuration>
         </plugin>
         <plugin>          					
           <artifactId>maven-jar-plugin</artifactId>

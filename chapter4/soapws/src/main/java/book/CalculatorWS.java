@@ -1,6 +1,6 @@
 package book;
 
-import jakarta.jws.WebService;
+import javax.jws.WebService;
 
 @WebService
 public class CalculatorWS {

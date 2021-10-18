@@ -10,6 +10,7 @@
 	<description>A simple jms client.</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>16</maven.compiler.release>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,10 +27,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
-				<configuration>
-					<fork>true</fork>
-        			<release>13</release>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -56,7 +53,6 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>pt.uc.dei.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
