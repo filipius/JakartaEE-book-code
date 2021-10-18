@@ -10,9 +10,10 @@
 	<description>A simple restclient.</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>16</maven.compiler.release>
 	</properties>
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
@@ -23,23 +24,14 @@
 			<artifactId>resteasy-jackson2-provider</artifactId>
 			<version>3.13.2.Final</version>
 		</dependency>
- 
 
-
-		
 	</dependencies>
 	<build>
-		<finalName>${project.artifactId}</finalName>	
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<fork>true</fork>
-					<source>13</source>
-					<target>13</target>
-				</configuration>
+				<version>3.8.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -66,7 +58,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>pt.uc.dei.App</mainClass>
+							<mainClass>book.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
