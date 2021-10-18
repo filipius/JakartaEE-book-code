@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the artifact package. 
- * &lt;p&gt;An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,10 +24,10 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Add_QNAME = new QName("http://core/", "add");
-    private final static QName _AddResponse_QNAME = new QName("http://core/", "addResponse");
-    private final static QName _Subtract_QNAME = new QName("http://core/", "subtract");
-    private final static QName _SubtractResponse_QNAME = new QName("http://core/", "subtractResponse");
+    private final static QName _Add_QNAME = new QName("http://book/", "add");
+    private final static QName _AddResponse_QNAME = new QName("http://book/", "addResponse");
+    private final static QName _Subtract_QNAME = new QName("http://book/", "subtract");
+    private final static QName _SubtractResponse_QNAME = new QName("http://book/", "subtractResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: artifact
@@ -76,7 +76,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link Add }{@code >}
      */
-    @XmlElementDecl(namespace = "http://core/", name = "add")
+    @XmlElementDecl(namespace = "http://book/", name = "add")
     public JAXBElement<Add> createAdd(Add value) {
         return new JAXBElement<Add>(_Add_QNAME, Add.class, null, value);
     }
@@ -89,7 +89,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link AddResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://core/", name = "addResponse")
+    @XmlElementDecl(namespace = "http://book/", name = "addResponse")
     public JAXBElement<AddResponse> createAddResponse(AddResponse value) {
         return new JAXBElement<AddResponse>(_AddResponse_QNAME, AddResponse.class, null, value);
     }
@@ -102,7 +102,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link Subtract }{@code >}
      */
-    @XmlElementDecl(namespace = "http://core/", name = "subtract")
+    @XmlElementDecl(namespace = "http://book/", name = "subtract")
     public JAXBElement<Subtract> createSubtract(Subtract value) {
         return new JAXBElement<Subtract>(_Subtract_QNAME, Subtract.class, null, value);
     }
@@ -115,7 +115,7 @@ public class ObjectFactory {
      * @return
      *     the new instance of {@link JAXBElement }{@code <}{@link SubtractResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://core/", name = "subtractResponse")
+    @XmlElementDecl(namespace = "http://book/", name = "subtractResponse")
     public JAXBElement<SubtractResponse> createSubtractResponse(SubtractResponse value) {
         return new JAXBElement<SubtractResponse>(_SubtractResponse_QNAME, SubtractResponse.class, null, value);
     }
