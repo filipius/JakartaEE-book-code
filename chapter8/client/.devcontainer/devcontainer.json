@@ -1,0 +1,11 @@
+{
+    "name": "Java",
+	"image": "openjdk:16",
+	"extensions": [
+		"dotjoshjohnson.xml",
+		"vscjava.vscode-maven",
+		"vscjava.vscode-java-pack",
+		"redhat.fabric8-analytics",
+		"mhutchie.git-graph"
+	],
+}
