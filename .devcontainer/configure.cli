@@ -14,13 +14,13 @@ data-source add --name=PostgresDS --driver-name=postgresql-42.2.24.jar  --driver
 /subsystem=ejb3/application-security-domain=other:add(security-domain=ApplicationDomain)
 
 # Update the http-remoting-connector to use the application-sasl-authentication factory
-/subsystem=remoting/http-connector=http-remoting-connector:write-attribute(name=sasl-authentication-factory,value=application-sasl-authentication)
+/subsystem=remoting/http-connector= http-remoting-connector:write-attribute(name= sasl-authentication-factory,value=application-sasl-authentication)
 
 # JMS
 jms-queue add --queue-address=playQueue --entries=java:jboss/exported/jms/queue/PlayQueue
 jms-topic add --topic-address=playTopic --entries=java:jboss/exported/jms/topic/playTopic
-/subsystem=messaging-activemq/server=default/security-setting=#/role=guest:remove()
-/subsystem=messaging-activemq/server=default/security-setting=#/role=guest:add(consume=true,create-durable-queue=true,delete-durable-queue=true,create-non-durable-queue=true,delete-non-durable-queue=true,send=true)
+/subsystem=messaging-activemq/server= default/security-setting=#/role=guest:remove()
+/subsystem=messaging-activemq/server= default/security-setting=#/role=guest:add(consume=true,create-durable-queue=true,delete-durable-queue=true,create-non-durable-queue=true,delete-non-durable-queue=true,send=true)
 
 # Run the batch commands
 run-batch
