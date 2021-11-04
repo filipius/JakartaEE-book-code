@@ -1,2 +1,2 @@
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://book/")
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://book/")
 package artifact;
