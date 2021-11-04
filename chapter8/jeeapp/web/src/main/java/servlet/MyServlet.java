@@ -24,7 +24,8 @@ public class MyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		
-		List<String> field1List = manageStudents.listStudents().stream().map(Student::getName).collect(Collectors.toList());
+		List<String> field1List = manageStudents.listStudents().stream().
+			map(Student::getName).collect(Collectors.toList());
 
 		String result = "Students list: " + field1List;
 		
