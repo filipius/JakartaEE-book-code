@@ -17,7 +17,7 @@
       <property name="javax.persistence.jdbc.driver"
         value="org.postgresql.Driver" />
       <property name="javax.persistence.jdbc.url"
-        value="jdbc:postgresql://localhost/playersandteams" />
+        value="jdbc:postgresql://localhost:5432/playersandteams" />
     </properties>
   </persistence-unit>
 </persistence>

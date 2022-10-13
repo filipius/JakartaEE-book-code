@@ -9,9 +9,7 @@ import org.jboss.ejb3.annotation.SecurityDomain;
 import javax.annotation.security.RolesAllowed;
 
 
-/**
-* Session Bean implementation class Calculator
-*/
+
 @Stateless
 @Remote(ICalculator.class)
 @RolesAllowed({ "guest" })

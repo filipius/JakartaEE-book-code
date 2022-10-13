@@ -15,7 +15,7 @@
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>16</maven.compiler.release>
+    <maven.compiler.release>18</maven.compiler.release>
     <wildfly-plugin-version>2.1.0.Beta1</wildfly-plugin-version>
   </properties>
   <dependencyManagement>
@@ -59,7 +59,7 @@
         </plugin>		
         <plugin>			
           <artifactId>maven-compiler-plugin</artifactId>			
-          <version>3.8.0</version>
+          <version>3.10.1</version>
         </plugin>
         <plugin>          					
           <artifactId>maven-jar-plugin</artifactId>

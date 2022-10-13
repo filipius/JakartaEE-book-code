@@ -9,7 +9,7 @@
 	<name>EJB-client</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>16</maven.compiler.release>
+		<maven.compiler.release>18</maven.compiler.release>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-client-all</artifactId>
-			<version>24.0.1.Final</version>
+			<version>26.1.2.Final</version>
 		</dependency>		
 	</dependencies>
 	<build>
@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.10.1</version>
             </plugin>			
 		</plugins>
 	</build>

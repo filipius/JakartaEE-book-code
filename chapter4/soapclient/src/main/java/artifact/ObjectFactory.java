@@ -39,6 +39,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Add }
      * 
+     * @return
+     *     the new instance of {@link Add }
      */
     public Add createAdd() {
         return new Add();
@@ -47,6 +49,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddResponse }
      * 
+     * @return
+     *     the new instance of {@link AddResponse }
      */
     public AddResponse createAddResponse() {
         return new AddResponse();
@@ -55,6 +59,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Subtract }
      * 
+     * @return
+     *     the new instance of {@link Subtract }
      */
     public Subtract createSubtract() {
         return new Subtract();
@@ -63,6 +69,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SubtractResponse }
      * 
+     * @return
+     *     the new instance of {@link SubtractResponse }
      */
     public SubtractResponse createSubtractResponse() {
         return new SubtractResponse();
@@ -78,7 +86,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://book/", name = "add")
     public JAXBElement<Add> createAdd(Add value) {
-        return new JAXBElement<Add>(_Add_QNAME, Add.class, null, value);
+        return new JAXBElement<>(_Add_QNAME, Add.class, null, value);
     }
 
     /**
@@ -91,7 +99,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://book/", name = "addResponse")
     public JAXBElement<AddResponse> createAddResponse(AddResponse value) {
-        return new JAXBElement<AddResponse>(_AddResponse_QNAME, AddResponse.class, null, value);
+        return new JAXBElement<>(_AddResponse_QNAME, AddResponse.class, null, value);
     }
 
     /**
@@ -104,7 +112,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://book/", name = "subtract")
     public JAXBElement<Subtract> createSubtract(Subtract value) {
-        return new JAXBElement<Subtract>(_Subtract_QNAME, Subtract.class, null, value);
+        return new JAXBElement<>(_Subtract_QNAME, Subtract.class, null, value);
     }
 
     /**
@@ -117,7 +125,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://book/", name = "subtractResponse")
     public JAXBElement<SubtractResponse> createSubtractResponse(SubtractResponse value) {
-        return new JAXBElement<SubtractResponse>(_SubtractResponse_QNAME, SubtractResponse.class, null, value);
+        return new JAXBElement<>(_SubtractResponse_QNAME, SubtractResponse.class, null, value);
     }
 
 }
