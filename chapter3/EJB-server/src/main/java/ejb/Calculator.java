@@ -1,19 +1,20 @@
 package ejb;
 
-import javax.ejb.Stateless;
-import javax.ejb.Remote;
+import jakarta.annotation.security.RolesAllowed;
+
+import org.jboss.ejb3.annotation.SecurityDomain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.jboss.ejb3.annotation.SecurityDomain;
-import javax.annotation.security.RolesAllowed;
+import jakarta.ejb.Remote;
+import jakarta.ejb.Stateless;
 
 
 
 @Stateless
 @Remote(ICalculator.class)
-@RolesAllowed({ "guest" })
-@SecurityDomain("other")
+// @RolesAllowed({ "guest" })
+// @SecurityDomain("other")
 public class Calculator implements ICalculator {
 	Logger logger = LoggerFactory.getLogger(Calculator.class);
 

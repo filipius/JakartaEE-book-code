@@ -10,20 +10,20 @@
 	<name>simpleweb Maven Webapp</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>18</maven.compiler.release>
+		<maven.compiler.release>21</maven.compiler.release>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-			<scope>provided</scope>
+    		<groupId>jakarta.servlet.jsp.jstl</groupId>
+    		<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    		<version>3.0.0</version>
+    		<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
-			<scope>provided</scope>
+    		<groupId>jakarta.servlet</groupId>
+    		<artifactId>jakarta.servlet-api</artifactId>
+    		<version>6.0.0</version>
+    		<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -32,7 +32,7 @@
 			<plugins>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.10.1</version>
+					<version>3.11.0</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-war-plugin</artifactId>

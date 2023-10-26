@@ -19,7 +19,7 @@
         <code class="literal">metadata</code></a></span></dt></dl></dd><dt><span class="section"><a href="ch03.html#users-guide-modular-databinding">17. Modular Databinding</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#md-introduction">17.1. Introduction</a></span></dt><dt><span class="section"><a href="ch03.html#md-jvm">17.2. Configure databinding for JVM</a></span></dt><dt><span class="section"><a href="ch03.html#md-endpoint">17.3. Configure databinding for an endpoint</a></span></dt></dl></dd><dt><span class="section"><a href="ch03.html#users-guide-external-metadata">18. External Web Service Metadata</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#external-metadata-xml-per-file">18.1. Configuration files</a></span></dt><dt><span class="section"><a href="ch03.html#external-metadata-xsd">18.2. XSD Schema</a></span></dt><dt><span class="section"><a href="ch03.html#external-metadata-passing-configurations">18.3. Passing Configuration Files to Eclipse Implementation of XML Web Services</a></span></dt></dl></dd></dl></div><div lang="en" class="section" id="users-guide-overview"><div class="titlepage"><div><div><h2 class="title" style="clear: both">1.&nbsp;Overview</h2></div></div></div><div class="section" id="introduction"><div class="titlepage"><div><div><h3 class="title">1.1.&nbsp;Introduction</h3></div></div></div><p>This document describes the new features available in this
         release of the Eclipse Implementation of XML Web Services. The main focus of this
         document is to describe the tools used to develop
-        Eclipse Implementation of XML Web Services 4.0.0 web service endpoints and clients. Readers of
+        Eclipse Implementation of XML Web Services 4.0.2 web service endpoints and clients. Readers of
         this document should be familiar with web services <a class="link" href="http://www.w3.org/TR/2000/REC-xml-20001006" target="_top">XML</a>,
         <a class="link" href="http://www.w3.org/TR/2001/REC-xmlschema-1-20010502/" target="_top">XML
         Schema</a> and <a class="link" href="http://www.w3.org/TR/2001/NOTE-wsdl-20010315" target="_top">WSDL</a>.
@@ -38,7 +38,7 @@
         <a class="link" href="https://jakarta.ee/specifications/platform/" target="_top">Jakarta EE
         </a> or <a class="link" href="https://eclipse-ee4j.github.io/glassfish/" target="_top">GlassFish</a>
         documentation/samples. The majority of the documentation included with
-        Jakarta XML Web Services is valid with Jakarta EE as well.</p></div><div class="section" id="features"><div class="titlepage"><div><div><h3 class="title">1.2.&nbsp;Features</h3></div></div></div><div class="section" id="jax-ws-api"><div class="titlepage"><div><div><h4 class="title">1.2.1.&nbsp;Jakarta XML Web Services 4.0 API</h4></div></div></div><p>Jakarta XML Web Services 4.0 is a new Release of XML-WS API and it has the following new features from Jakarta XML Web Services 4.0 specification:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Annotate <code class="literal">jakarta.xml.ws.AsyncHandler</code> with <code class="literal">@FunctionalInterface</code></p></li><li class="listitem"><p>Extend <code class="literal">jakarta.xml.ws.wsaddressing.W3CEndpointReference</code> API with getters</p></li></ul></div><p>Jakarta XML Web Services 4.0 has the following features from Jakarta XML Web Services specification:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Support for Jakarta XML Binding APIs</p></li><li class="listitem"><p>Support for WS-Addressing 1.0 - Metadata
+        Jakarta XML Web Services is valid with Jakarta EE as well.</p></div><div class="section" id="features"><div class="titlepage"><div><div><h3 class="title">1.2.&nbsp;Features</h3></div></div></div><div class="section" id="jax-ws-api"><div class="titlepage"><div><div><h4 class="title">1.2.1.&nbsp;Jakarta XML Web Services 4.0 API</h4></div></div></div><p>Jakarta XML Web Services 4.0 is a new Release of XML-WS API and it has the following new features from Jakarta XML Web Services 3.0 specification:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Annotate <code class="literal">jakarta.xml.ws.AsyncHandler</code> with <code class="literal">@FunctionalInterface</code></p></li><li class="listitem"><p>Extend <code class="literal">jakarta.xml.ws.wsaddressing.W3CEndpointReference</code> API with getters</p></li></ul></div><p>Jakarta XML Web Services 3.0 has the following features from Jakarta XML Web Services specification:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Support for Jakarta XML Binding APIs</p></li><li class="listitem"><p>Support for WS-Addressing 1.0 - Metadata
                     specification</p></li><li class="listitem"><p>Support for <code class="literal">@XmlElement</code> on SEI's
                     wrapper parameter</p></li><li class="listitem"><p>Support for <code class="literal">@XmlType</code> on exception
                     classes</p></li><li class="listitem"><p>HTTP SPI</p></li><li class="listitem"><p>Provide API to create Endpoint with features</p></li><li class="listitem"><p>WS-Addressing support</p></li><li class="listitem"><p>APIs for EndpointReference </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Creation </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: square; "><li class="listitem"><p><code class="literal">BindingProvider.getEndpointReference()</code></p></li><li class="listitem"><p><code class="literal">Endpoint.getEndpointReference()</code></p></li><li class="listitem"><p><code class="literal">MessageContext.getEndpointReference()</code></p></li></ul></div></li><li class="listitem"><p>EPR Propagation </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: square; "><li class="listitem"><p>Using Jakarta XML Binding bind W3C EPR to
@@ -92,7 +92,7 @@
             directly send XML over HTTP using <a class="xref" href="ch03.html#users-guide-provider" title="2.&nbsp;Provider">Provider</a> and
             <a class="xref" href="ch03.html#users-guide-dispatch" title="4.&nbsp;Dispatch">Dispatch</a>
             implementations. This enables support for REST style Web Services
-            in Jakarta XML Web Services. For details refer to restful sample.</p></div><div class="section" id="jaxb-2-0"><div class="titlepage"><div><div><h4 class="title">1.2.6.&nbsp;Jakarta XML Binding 4.0</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.0 uses Jakarta XML Binding 4.0 for data-binding between
+            in Jakarta XML Web Services. For details refer to restful sample.</p></div><div class="section" id="jaxb-2-0"><div class="titlepage"><div><div><h4 class="title">1.2.6.&nbsp;Jakarta XML Binding 4.0</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.2 uses Jakarta XML Binding 4.0 for data-binding between
             Java and XML which enables features such as separate compilation,
             type substitution and other improvements.</p><div class="section" id="type-substitution"><div class="titlepage"><div><div><h5 class="title">1.2.6.1.&nbsp;Type Substitution using
                 <code class="literal">@XmlSeeAlso</code></h5></div></div></div><p>Jakarta XML Binding defines <code class="literal">@XmlSeeAlso</code>
@@ -109,7 +109,7 @@
                 web service SEI parameters, which enables better control of
                 XML representation. For this support, Jakarta XML Web Services relies on Jakarta XML Binding
                 2.2 API which allows the <code class="literal">@XmlElement</code>
-                annotation on parameters.</p></div></div><div class="section" id="ws-addressing"><div class="titlepage"><div><div><h4 class="title">1.2.7.&nbsp;WS-Addressing</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.0 supports for W3C <a class="link" href="http://www.w3.org/TR/ws-addr-core" target="_top">Core</a>, <a class="link" href="http://www.w3.org/TR/ws-addr-soap" target="_top">SOAP Binding</a>
+                annotation on parameters.</p></div></div><div class="section" id="ws-addressing"><div class="titlepage"><div><div><h4 class="title">1.2.7.&nbsp;WS-Addressing</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.2 supports for W3C <a class="link" href="http://www.w3.org/TR/ws-addr-core" target="_top">Core</a>, <a class="link" href="http://www.w3.org/TR/ws-addr-soap" target="_top">SOAP Binding</a>
             and <a class="link" href="http://www.w3.org/TR/2007/REC-ws-addr-metadata-20070904" target="_top">Addressing
             1.0 - Metadata</a> specifications and defines standard API and
             annotations to enable/disable W3C WS-Addressing on the client and
@@ -123,7 +123,7 @@
             samples <span class="bold"><strong>fromjava-wsaddressing</strong></span>,
             <span class="bold"><strong>fromwsdl-wsaddressing-policy</strong></span> and
             <span class="bold"><strong>fromwsdl-wsaddressing</strong></span> with the
-            Eclipse Implementation of XML Web Services 4.0.0 for details on the WS-Addressing programming
+            Eclipse Implementation of XML Web Services 4.0.2 for details on the WS-Addressing programming
             model.</p></div><div class="section" id="annotations"><div class="titlepage"><div><div><h4 class="title">1.2.8.&nbsp;Annotations</h4></div></div></div><p>Jakarta XML Web Services 4.0 relies heavily on the
             use of annotations as provided by <span class="emphasis"><em>A Metadata Facility
             for the Java Programming Language</em></span> <a class="link" href="http://jcp.org/en/jsr/detail?id=175" target="_top">(JSR 175)</a>
@@ -144,7 +144,7 @@
             More documentation about <span class="command"><strong>javac</strong></span> can be found in section <a class="xref" href="ch04.html#tools-annotation-processing" title="6.&nbsp;Annotation Processing"><span class="command"><strong>Annotation Processing</strong></span></a>
             Deprecated <span class="command"><strong>apt</strong></span> will be covered in more detail in section
             <a class="xref" href="ch04.html#tools-apt" title="8.&nbsp;apt"><span class="command"><strong>apt</strong></span></a>.</p><p>For more information on the annotations used by Jakarta XML Web Services 2.0
-            please refer to <a class="xref" href="ch03.html#users-guide-annotations" title="10.&nbsp;Annotations">Annotations</a>.</p></div><div class="section" id="customizations"><div class="titlepage"><div><div><h4 class="title">1.2.9.&nbsp;Customizations</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.0 carries forward customization support
+            please refer to <a class="xref" href="ch03.html#users-guide-annotations" title="10.&nbsp;Annotations">Annotations</a>.</p></div><div class="section" id="customizations"><div class="titlepage"><div><div><h4 class="title">1.2.9.&nbsp;Customizations</h4></div></div></div><p>Eclipse Implementation of XML Web Services 4.0.2 carries forward customization support
             introduced in Jakarta XML Web Services.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Define a package where Java artifacts mapped from a
                     WSDL file will be generated</p></li><li class="listitem"><p>Package customization for value classes mapped from
                     the imported XML schemas by the WSDL document</p></li><li class="listitem"><p>Handler chain customization</p></li></ul></div><p>Jakarta XML Web Services specification defines standard XML based
@@ -187,10 +187,10 @@
             per-port, per-protocol, or per-service basis. A new framework of
             context objects has been added to allow client code to share
             information easily with handlers.</p><p>For more information on the handler framework in
-            Eclipse Implementation of XML Web Services 4.0.0 please refer to <a class="xref" href="ch03.html#users-guide-handler" title="6.&nbsp;Handler">Handler</a>.</p></div><div class="section" id="provider"><div class="titlepage"><div><div><h4 class="title">1.2.11.&nbsp;Provider</h4></div></div></div><p>Web service endpoints may choose to work at the XML message
+            Eclipse Implementation of XML Web Services 4.0.2 please refer to <a class="xref" href="ch03.html#users-guide-handler" title="6.&nbsp;Handler">Handler</a>.</p></div><div class="section" id="provider"><div class="titlepage"><div><div><h4 class="title">1.2.11.&nbsp;Provider</h4></div></div></div><p>Web service endpoints may choose to work at the XML message
             level by implementing the <code class="literal">Provider</code> interface.
             Here the endpoints access messages or message payloads using this
-            low level, generic API.</p><p>For more information on providers in Eclipse Implementation of XML Web Services 4.0.0
+            low level, generic API.</p><p>For more information on providers in Eclipse Implementation of XML Web Services 4.0.2
             please refer to <a class="xref" href="ch03.html#users-guide-provider" title="2.&nbsp;Provider">Provider</a>.</p></div><div class="section" id="dispatch"><div class="titlepage"><div><div><h4 class="title">1.2.12.&nbsp;Dispatch</h4></div></div></div><p>The Dispatch API is intended for advanced XML developers who
             prefer to use XML constructs at the
             <code class="literal">java.lang.transform.Source</code> or
@@ -200,7 +200,7 @@
             API can be used in both <code class="literal">Message</code> and
             <code class="literal">Payload</code> modes.</p><p>For more information on the <code class="literal">Dispatch</code>&nbsp;
             please refer to <a class="xref" href="ch03.html#users-guide-dispatch" title="4.&nbsp;Dispatch">Dispatch</a>.</p></div><div class="section" id="asynchronous-client-operations"><div class="titlepage"><div><div><h4 class="title">1.2.13.&nbsp;Asynchronous Client Operations</h4></div></div></div><p>For more information on asynchronous clients in
-            Eclipse Implementation of XML Web Services 4.0.0 please refer to <a class="xref" href="ch03.html#users-guide-asynchronous-client" title="5.&nbsp;Asynchronous Client">Asynchronous Client</a>.</p></div></div><div class="section" id="programming-model"><div class="titlepage"><div><div><h3 class="title">1.3.&nbsp;Programming Model</h3></div></div></div><p>This section of the documentation will focus on the programming
+            Eclipse Implementation of XML Web Services 4.0.2 please refer to <a class="xref" href="ch03.html#users-guide-asynchronous-client" title="5.&nbsp;Asynchronous Client">Asynchronous Client</a>.</p></div></div><div class="section" id="programming-model"><div class="titlepage"><div><div><h3 class="title">1.3.&nbsp;Programming Model</h3></div></div></div><p>This section of the documentation will focus on the programming
         model for both developing and publishing a web service endpoint, and
         writing a web service client. A web service endpoint is the
         implementation of a web service. A web service client is an
@@ -221,7 +221,7 @@
             has total control over what XML schema is used, but has less
             control over what the generated service endpoint and the classes
             it uses will contain.</p><div class="section" id="starting-from-java"><div class="titlepage"><div><div><h5 class="title">1.3.1.1.&nbsp;Starting from Java</h5></div></div></div><p>The basic process for deploying a web service from a
-                Java class consists of two steps.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Generate portable artifacts.</p></li><li class="listitem"><p>Create a WAR file to deploy</p></li></ol></div></div><div class="section" id="generate-portable-artifacts"><div class="titlepage"><div><div><h5 class="title">1.3.1.2.&nbsp;Generate Portable Artifacts</h5></div></div></div><p>Portable artifacts generated by Eclipse Implementation of XML Web Services 4.0.0
+                Java class consists of two steps.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Generate portable artifacts.</p></li><li class="listitem"><p>Create a WAR file to deploy</p></li></ol></div></div><div class="section" id="generate-portable-artifacts"><div class="titlepage"><div><div><h5 class="title">1.3.1.2.&nbsp;Generate Portable Artifacts</h5></div></div></div><p>Portable artifacts generated by Eclipse Implementation of XML Web Services 4.0.2
                 include zero or more JavaBean classes to aide in the
                 marshaling of method invocations and responses, as well as
                 service-specific exceptions.</p><p>In document/literal wrapped mode, two JavaBeans are
@@ -269,7 +269,7 @@
     }
 }</pre></div><p>If you are familiar with JAX-RPC 1.1, you will notice
                 that this implementation class does not implement a service
-                endpoint interface. In Eclipse Implementation of XML Web Services 4.0.0 a service
+                endpoint interface. In Eclipse Implementation of XML Web Services 4.0.2 a service
                 endpoint interface is no longer required.</p><p>When starting from a Java endpoint implementation class,
                 it is recommended that the portable artifacts be generated
                 from source using <span class="command"><strong>annotationProcessing</strong></span>. This because the
@@ -482,7 +482,7 @@ AddNumbersPortType port = <span class="ReservedWord">new</span> AddNumbersServic
                 <code class="literal">XML/HTTP</code> binding can be used with REST Web
                 Services. Please see the restful sample program for more
                 information.</p><p>For more information on <code class="literal">Dispatch</code> in
-                Eclipse Implementation of XML Web Services 4.0.0 please refer to <a class="xref" href="ch03.html#users-guide-dispatch" title="4.&nbsp;Dispatch">Dispatch</a>.</p></div></div></div><div class="section" id="useful-information"><div class="titlepage"><div><div><h3 class="title">1.4.&nbsp;Useful Information</h3></div></div></div><p><a class="link" href="http://jcp.org/aboutJava/communityprocess/final/jsr269/" target="_top">Pluggable Annotation Processing API </a> &#8211;
+                Eclipse Implementation of XML Web Services 4.0.2 please refer to <a class="xref" href="ch03.html#users-guide-dispatch" title="4.&nbsp;Dispatch">Dispatch</a>.</p></div></div></div><div class="section" id="useful-information"><div class="titlepage"><div><div><h3 class="title">1.4.&nbsp;Useful Information</h3></div></div></div><p><a class="link" href="http://jcp.org/aboutJava/communityprocess/final/jsr269/" target="_top">Pluggable Annotation Processing API </a> &#8211;
             http://jcp.org/aboutJava/communityprocess/final/jsr269/</p><p><a class="link" href="http://docs.oracle.com/javase/6/docs/technotes/guides/apt/index.html" target="_top">Annotation
         Processing Tool (apt)</a> &#8211;
         http://docs.oracle.com/javase/6/docs/technotes/guides/apt/index.html.</p><p>Please use the <a class="link" href="https://projects.eclipse.org/projects/ee4j.metro" target="_top">METRO</a> forum for feedback.</p><p>The Eclipse Implementation of XML Web Services project on GitHub is: <a class="link" href="https://github.com/eclipse-ee4j/metro-jax-ws" target="_top">https://github.com/eclipse-ee4j/metro-jax-ws</a>.</p></div></div><div lang="en" class="section" id="users-guide-provider"><div class="titlepage"><div><div><h2 class="title" style="clear: both">2.&nbsp;Provider</h2></div></div></div><p>Web Service endpoints may choose to work at the XML message level by
@@ -711,7 +711,7 @@ Service service = Service.create(URL wsdlLocation, QName serviceQName);</pre></d
             specific for the binding information provided in the supplied WSDL
             file.</p><p>Developers who have used web service applications in the
             past are familiar with the port <code class="literal">QName</code> and
-            endpoint address parameters of this method. Eclipse Implementation of XML Web Services 4.0.0
+            endpoint address parameters of this method. Eclipse Implementation of XML Web Services 4.0.2
             supports three <code class="literal">Binding</code> URI's, that of the SOAP
             1.1, the SOAP 1.2 and XML/HTTP Binding. For more information on
             SOAP 1.2 support please refer to the SOAP 1.2 documents. For the
@@ -1523,7 +1523,7 @@ SOAPAction: ""
     to:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Define a package where Java artifacts mapped from a WSDL
             file will be generated.</p></li><li class="listitem"><p>Customize the package for the value classes mapped from the
             imported XML schema by the WSDL document.</p></li><li class="listitem"><p>Customize handler chains.</p></li></ul></div><p>But these customizations were not portable and could not be used
-    across other JAX-RPC implementations. Eclipse Implementation of XML Web Services 4.0.0 provides
+    across other JAX-RPC implementations. Eclipse Implementation of XML Web Services 4.0.2 provides
     complete support for all the binding declarations defined by the
     specification.</p><div class="section" id="declaring-customizations"><div class="titlepage"><div><div><h3 class="title">9.1.&nbsp;Declaring Customizations</h3></div></div></div><p>All the binding declaration elements live in
         <code class="literal">https://jakarta.ee/xml/ns/jaxws</code> namespace. There
@@ -1927,7 +1927,7 @@ SOAPAction: ""
             All endpoint implementation classes MUST have a
             <code class="literal">WebService</code> annotation and must meet the
             requirements of section 3.3 of the <a class="link" href="https://jakarta.ee/specifications/xml-web-services/" target="_top">Jakarta XML Web Services
-            </a> specification.</p><div class="table" id="d0e4066"><p class="title"><b>Table&nbsp;4.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Description
+            </a> specification.</p><div class="table" id="d0e4101"><p class="title"><b>Table&nbsp;4.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Description
                 of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.WebService - Description&#xA;                of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>The name of the
                             <code class="literal">wsdl:portType</code></p></td><td><p>The unqualified name of the Java class
                             or interface</p></td></tr><tr><td><p><code class="literal">targetNamespace</code></p></td><td><p>The XML namespace of the the WSDL and
@@ -1957,7 +1957,7 @@ SOAPAction: ""
                             interface is not required.</p></td></tr><tr><td><p><code class="literal">portName</code></p></td><td><p>The
                             <code class="literal">wsdl:portName</code></p></td><td><p>The <code class="literal">WebService.name</code>
                             + "Port"</p></td></tr><tr><td><p><code class="literal">wsdlLocation</code></p></td><td><p>Not currently used by
-                            Eclipse Implementation of XML Web Services 4.0.0</p></td><td><p></p></td></tr></tbody></table></div></div><br class="table-break"><div class="section" id="section-5790511949612727"><div class="titlepage"><div><div><h5 class="title">10.2.1.1.&nbsp;Annotation Type Definition</h5></div></div></div><div class="informalexample"><pre class="programlisting"><span class="Annotation">@Retention(value = RetentionPolicy.RUNTIME)</span>
+                            Eclipse Implementation of XML Web Services 4.0.2</p></td><td><p></p></td></tr></tbody></table></div></div><br class="table-break"><div class="section" id="section-5790511949612727"><div class="titlepage"><div><div><h5 class="title">10.2.1.1.&nbsp;Annotation Type Definition</h5></div></div></div><div class="informalexample"><pre class="programlisting"><span class="Annotation">@Retention(value = RetentionPolicy.RUNTIME)</span>
 <span class="Annotation">@Target({ElementType.TYPE})</span>
 <span class="ReservedWord">public</span> <span class="Annotation">@interface</span> WebService {
     String name() <span class="ReservedWord">default</span> <span class="String">""</span>;
@@ -1971,7 +1971,7 @@ SOAPAction: ""
     String endpointInterface() <span class="ReservedWord">default</span> <span class="String">""</span>;
 
     String portName() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-724263520121821"><div class="titlepage"><div><div><h5 class="title">10.2.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4179"><p class="title"><b>Example&nbsp;3.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Example
+}</pre></div></div><div class="section" id="section-724263520121821"><div class="titlepage"><div><div><h5 class="title">10.2.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4214"><p class="title"><b>Example&nbsp;3.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Example
                     1</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(name = "AddNumbers",
         targetNamespace = "http://duke.example.org")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl {
@@ -2001,7 +2001,7 @@ SOAPAction: ""
                 interface must also have a <code class="literal">@WebService</code>
                 annotation. The following is the above
                 <code class="literal">AddNumbersImpl</code> modified to use a service
-                endpoint interface.</p><div class="example" id="d0e4200"><p class="title"><b>Example&nbsp;4.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Example
+                endpoint interface.</p><div class="example" id="d0e4235"><p class="title"><b>Example&nbsp;4.&nbsp;<code class="literal">@jakarta.jws.WebService</code> - Example
                     2 - Implementation class using Service Endpoint
                     Interface</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(endpointInterface = "annotations.server.AddNumbersIF")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl {
@@ -2029,7 +2029,7 @@ SOAPAction: ""
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-jws-webmethod-outline"><div class="titlepage"><div><div><h4 class="title">10.2.2.&nbsp;<code class="literal">@jakarta.jws.WebMethod</code></h4></div></div></div><p>The purpose of this annotation is to expose a method as a
             web service operation. The method must meet all the requirements
             of section 3.4 of the <a class="link" href="https://jakarta.ee/specifications/xml-web-services/" target="_top">Jakarta XML Web Services
-            </a> specification.</p><div class="table" id="d0e4218"><p class="title"><b>Table&nbsp;5.&nbsp;<code class="literal">@jakarta.jws.WebMethod</code> - Description
+            </a> specification.</p><div class="table" id="d0e4253"><p class="title"><b>Table&nbsp;5.&nbsp;<code class="literal">@jakarta.jws.WebMethod</code> - Description
                 of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.WebMethod - Description&#xA;                of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">operationName</code></p></td><td><p>The name of the
                             <code class="literal">wsdl:operation</code> matching this
                             method. For operations using the mode defined by
@@ -2054,7 +2054,7 @@ SOAPAction: ""
     String action() <span class="ReservedWord">default</span> <span class="String">""</span>;
 
     <span class="ReservedWord">boolean</span> exclude() <span class="ReservedWord">default</span> false;
-}</pre></div></div><div class="section" id="section-998755081708335"><div class="titlepage"><div><div><h5 class="title">10.2.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4293"><p class="title"><b>Example&nbsp;5.&nbsp;<code class="literal">@jakarta.jws.WebMethod</code> -
+}</pre></div></div><div class="section" id="section-998755081708335"><div class="titlepage"><div><div><h5 class="title">10.2.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4328"><p class="title"><b>Example&nbsp;5.&nbsp;<code class="literal">@jakarta.jws.WebMethod</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersIF <span class="ReservedWord">extends</span> Remote {
@@ -2070,7 +2070,7 @@ SOAPAction: ""
             annotation.</p><div class="section" id="section-57285842212862"><div class="titlepage"><div><div><h5 class="title">10.2.3.1.&nbsp;Annotation Type Definition</h5></div></div></div><div class="informalexample"><pre class="programlisting"><span class="Annotation">@Retention(value = RetentionPolicy.RUNTIME)</span>
 <span class="Annotation">@Target({ElementType.METHOD})</span>
 <span class="ReservedWord">public</span> <span class="Annotation">@interface</span> Oneway {
-}</pre></div></div><div class="section" id="section-877748055333987"><div class="titlepage"><div><div><h5 class="title">10.2.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4323"><p class="title"><b>Example&nbsp;6.&nbsp;<code class="literal">@jakarta.jws.OneWay</code> -
+}</pre></div></div><div class="section" id="section-877748055333987"><div class="titlepage"><div><div><h5 class="title">10.2.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4358"><p class="title"><b>Example&nbsp;6.&nbsp;<code class="literal">@jakarta.jws.OneWay</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(name = "CheckIn")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> CheckInIF {
     
@@ -2079,7 +2079,7 @@ SOAPAction: ""
     <span class="ReservedWord">public</span> <span class="ReservedWord">void</span> checkIn(String name);
 
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-jws-webparam-outline"><div class="titlepage"><div><div><h4 class="title">10.2.4.&nbsp;<code class="literal">@jakarta.jws.WebParam</code></h4></div></div></div><p>This annotation is used to customize the mapping of a single
-            parameter to a message part or element.</p><div class="table" id="d0e4336"><p class="title"><b>Table&nbsp;6.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Description of
+            parameter to a message part or element.</p><div class="table" id="d0e4371"><p class="title"><b>Table&nbsp;6.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Description of
                 Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.WebParam - Description of&#xA;                Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Name of the parameter.</p><p>If
                             the operation is RPC style and
                             <code class="literal">@WebParam.partName</code> has not been
@@ -2148,7 +2148,7 @@ SOAPAction: ""
     <span class="ReservedWord">boolean</span> header() <span class="ReservedWord">default</span> false;
 
     String partName() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-759744573502372"><div class="titlepage"><div><div><h5 class="title">10.2.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4518"><p class="title"><b>Example&nbsp;7.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Example
+}</pre></div></div><div class="section" id="section-759744573502372"><div class="titlepage"><div><div><h5 class="title">10.2.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4553"><p class="title"><b>Example&nbsp;7.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Example
                     1</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersIF <span class="ReservedWord">extends</span> Remote {
@@ -2159,7 +2159,7 @@ SOAPAction: ""
                           <span class="Annotation">@WebParam(name = "num2")</span> <span class="ReservedWord">int</span> number2) <span class="ReservedWord">throws</span> 
             RemoteException, AddNumbersException;
 
-}</pre></div></div><br class="example-break"><div class="example" id="d0e4525"><p class="title"><b>Example&nbsp;8.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Example
+}</pre></div></div><br class="example-break"><div class="example" id="d0e4560"><p class="title"><b>Example&nbsp;8.&nbsp;<code class="literal">@jakarta.jws.WebParam</code> - Example
                     2</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersIF <span class="ReservedWord">extends</span> Remote {
@@ -2173,7 +2173,7 @@ SOAPAction: ""
 
 
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-jws-webresult-outline"><div class="titlepage"><div><div><h4 class="title">10.2.5.&nbsp;<code class="literal">@jakarta.jws.WebResult</code></h4></div></div></div><p>This annotation is used to customize the mapping of the
-            method return value to a WSDL part or XML element.</p><div class="table" id="d0e4538"><p class="title"><b>Table&nbsp;7.&nbsp;<code class="literal">@jakarta.jws.WebResult</code> - Description
+            method return value to a WSDL part or XML element.</p><div class="table" id="d0e4573"><p class="title"><b>Table&nbsp;7.&nbsp;<code class="literal">@jakarta.jws.WebResult</code> - Description
                 of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.WebResult - Description&#xA;                of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>The name of the return value in the
                             WSDL and on the wire. For <code class="literal">RPC</code>
                             bindings this is the part name of the return value
@@ -2210,7 +2210,7 @@ SOAPAction: ""
     <span class="ReservedWord">boolean</span> header() <span class="ReservedWord">default</span> false;
 
     String partName() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-324659921484612"><div class="titlepage"><div><div><h5 class="title">10.2.5.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4650"><p class="title"><b>Example&nbsp;9.&nbsp;<code class="literal">@jakarta.jws.WebResult</code> -
+}</pre></div></div><div class="section" id="section-324659921484612"><div class="titlepage"><div><div><h5 class="title">10.2.5.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4685"><p class="title"><b>Example&nbsp;9.&nbsp;<code class="literal">@jakarta.jws.WebResult</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersIF <span class="ReservedWord">extends</span> Remote {
@@ -2222,7 +2222,7 @@ SOAPAction: ""
             RemoteException, AddNumbersException;
 
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-jws-handlerchain-outline"><div class="titlepage"><div><div><h4 class="title">10.2.6.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code></h4></div></div></div><p>This annotation is used to specified an externally defined
-            handler chain.</p><div class="table" id="d0e4663"><p class="title"><b>Table&nbsp;8.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
+            handler chain.</p><div class="table" id="d0e4698"><p class="title"><b>Table&nbsp;8.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.HandlerChain -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">file</code></p></td><td><p>Location of the file containing the
                             handler chain definition. The location can be
                             relative or absolute with in a classpath system. If
@@ -2239,7 +2239,7 @@ SOAPAction: ""
 
     <span class="Annotation">@Deprecated</span> String name() <span class="ReservedWord">default</span> <span class="String">""</span>;
 
-}</pre></div></div><div class="section" id="section-0070675424428255"><div class="titlepage"><div><div><h5 class="title">10.2.6.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4714"><p class="title"><b>Example&nbsp;10.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
+}</pre></div></div><div class="section" id="section-0070675424428255"><div class="titlepage"><div><div><h5 class="title">10.2.6.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4749"><p class="title"><b>Example&nbsp;10.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService</span>
 <span class="Annotation">@HandlerChain(file = "handlers.xml")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl {
@@ -2259,7 +2259,7 @@ SOAPAction: ""
         <span class="ReservedWord">return</span> number1 + number2;
     }
 
-}</pre></div></div><br class="example-break"><div class="example" id="d0e4721"><p class="title"><b>Example&nbsp;11.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
+}</pre></div></div><br class="example-break"><div class="example" id="d0e4756"><p class="title"><b>Example&nbsp;11.&nbsp;<code class="literal">@jakarta.jws.HandlerChain</code> -
                     Example - handlers.xml</b></p><div class="example-contents"><pre class="programlisting"><span class="ReservedWord">&lt;jws:handler-config</span> <span class="Identifier">xmlns:jws</span>=<span class="String">"https://jakarta.ee/xml/ns/jakartaee"</span><span class="ReservedWord">&gt;</span>
     <span class="ReservedWord">&lt;jws:handler-chains&gt;</span>
         <span class="ReservedWord">&lt;jws:handler-chain&gt;</span>
@@ -2295,7 +2295,7 @@ SOAPAction: ""
             <code class="literal">DOCUMENT\LITERAL</code> invocation can be fully
             validated by a standard validating XML parser, while an
             <code class="literal">RPC\LITERAL</code> invocation cannot because of the
-            implied wrapper element around the invocation body.</p><div class="table" id="d0e4787"><p class="title"><b>Table&nbsp;9.&nbsp;<code class="literal">@jakarta.jws.soap.SOAPBinding</code> -
+            implied wrapper element around the invocation body.</p><div class="table" id="d0e4822"><p class="title"><b>Table&nbsp;9.&nbsp;<code class="literal">@jakarta.jws.soap.SOAPBinding</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.jws.soap.SOAPBinding -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">style</code></p></td><td><p>Defines the style for messages used in
                             a web service. The value can be either
                             <code class="literal">DOCUMENT</code> or
@@ -2333,7 +2333,7 @@ SOAPAction: ""
 
     ParameterStyle parameterStyle() <span class="ReservedWord">default</span> ParameterStyle.WRAPPED;
 
-}</pre></div></div><div class="section" id="section-106596084465574"><div class="titlepage"><div><div><h5 class="title">10.2.7.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4871"><p class="title"><b>Example&nbsp;12.&nbsp;<code class="literal">@jakarta.jws.soap.SOAPBinding</code> -
+}</pre></div></div><div class="section" id="section-106596084465574"><div class="titlepage"><div><div><h5 class="title">10.2.7.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4906"><p class="title"><b>Example&nbsp;12.&nbsp;<code class="literal">@jakarta.jws.soap.SOAPBinding</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")</span>
 <span class="Annotation">@SOAPBinding(style = SOAPBinding.Style.RPC,
@@ -2353,7 +2353,7 @@ SOAPAction: ""
             specify the binding to use for a web service endpoint
             implementation class. As well as specify additional features that
             may be enabled.</p><p>This annotation may be overriden programmatically or via
-            deployment descriptors, depending on the platform in use.</p><div class="table" id="d0e4894"><p class="title"><b>Table&nbsp;10.&nbsp;<code class="literal">@jakarta.xml.ws.BindingType</code> -
+            deployment descriptors, depending on the platform in use.</p><div class="table" id="d0e4929"><p class="title"><b>Table&nbsp;10.&nbsp;<code class="literal">@jakarta.xml.ws.BindingType</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.BindingType -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">value</code></p></td><td><p>A binding identifier (a
                             URI).</p><p>See the
                             <code class="literal">SOAPBinding</code> and
@@ -2403,7 +2403,7 @@ SOAPAction: ""
      * @since JAX-WS 2.1
      */</span>
     Feature[] features() <span class="ReservedWord">default</span> {};
-}</pre></div></div><div class="section" id="section-673452285502762"><div class="titlepage"><div><div><h5 class="title">10.3.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4957"><p class="title"><b>Example&nbsp;13.&nbsp;<code class="literal">@jakarta.xml.ws.BindingType</code> -
+}</pre></div></div><div class="section" id="section-673452285502762"><div class="titlepage"><div><div><h5 class="title">10.3.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e4992"><p class="title"><b>Example&nbsp;13.&nbsp;<code class="literal">@jakarta.xml.ws.BindingType</code> -
                     Example</b></p><div class="example-contents"><p>Given the web service defined by</p><pre class="programlisting"><span class="Annotation">@WebService</span>
 <span class="Annotation">@BindingType(value = "http://www.w3.org/2003/05/soap/bindings/HTTP/")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl {
@@ -2429,7 +2429,7 @@ SOAPAction: ""
             runtime.</p><p>When starting from Java this annotation is used to resolve
             overloading conflicts in <code class="literal">DOCUMENT\LITERAL</code> mode.
             Only the <code class="literal">className</code> is required in this
-            case.</p><div class="table" id="d0e4982"><p class="title"><b>Table&nbsp;11.&nbsp;<code class="literal">@jakarta.xml.ws.RequestWrapper</code> -
+            case.</p><div class="table" id="d0e5017"><p class="title"><b>Table&nbsp;11.&nbsp;<code class="literal">@jakarta.xml.ws.RequestWrapper</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.RequestWrapper -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">localName</code></p></td><td><p>Specifies the
                             <code class="literal">localName</code> of the XML Schema
                             element representing this request
@@ -2455,7 +2455,7 @@ SOAPAction: ""
      * Request wrapper bean name.
      */</span>
     <span class="ReservedWord">public</span> String className() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-677521323678242"><div class="titlepage"><div><div><h5 class="title">10.3.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5051"><p class="title"><b>Example&nbsp;14.&nbsp;<code class="literal">@jakarta.xml.ws.RequestWrapper</code> -
+}</pre></div></div><div class="section" id="section-677521323678242"><div class="titlepage"><div><div><h5 class="title">10.3.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5086"><p class="title"><b>Example&nbsp;14.&nbsp;<code class="literal">@jakarta.xml.ws.RequestWrapper</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersImpl {
     <span class="Comment">/**
      * @param arg1
@@ -2478,7 +2478,7 @@ SOAPAction: ""
             runtime.</p><p>When starting from Java this annotation is used to resolve
             overloading conflicts in <code class="literal">DOCUMENT\LITERAL</code> mode.
             Only the <code class="literal">className</code> is required in this
-            case.</p><div class="table" id="d0e5072"><p class="title"><b>Table&nbsp;12.&nbsp;<code class="literal">@jakarta.xml.ws.ResponseWrapper</code> -
+            case.</p><div class="table" id="d0e5107"><p class="title"><b>Table&nbsp;12.&nbsp;<code class="literal">@jakarta.xml.ws.ResponseWrapper</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.ResponseWrapper -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">localName</code></p></td><td><p>Specifies the
                             <code class="literal">localName</code> of the XML Schema
                             element representing this request
@@ -2504,7 +2504,7 @@ SOAPAction: ""
      * Request wrapper bean name.
      */</span>
     <span class="ReservedWord">public</span> String className() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-486634908061201"><div class="titlepage"><div><div><h5 class="title">10.3.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5141"><p class="title"><b>Example&nbsp;15.&nbsp;<code class="literal">@jakarta.xml.ws.ResponseWrapper</code> -
+}</pre></div></div><div class="section" id="section-486634908061201"><div class="titlepage"><div><div><h5 class="title">10.3.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5176"><p class="title"><b>Example&nbsp;15.&nbsp;<code class="literal">@jakarta.xml.ws.ResponseWrapper</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="ReservedWord">public</span> <span class="ReservedWord">interface</span> AddNumbersImpl {
     <span class="Comment">/**
      * @param arg1
@@ -2525,7 +2525,7 @@ SOAPAction: ""
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-xml-ws-servicemode-outline"><div class="titlepage"><div><div><h4 class="title">10.3.4.&nbsp;<code class="literal">@jakarta.xml.ws.ServiceMode</code></h4></div></div></div><p>This annotation allows the <a class="xref" href="ch03.html#users-guide-provider" title="2.&nbsp;Provider">Provider</a>
             developer to indicate whether a <code class="literal">Provider</code>
             implementation wishes to work with entire protocol messages or
-            just with protocol message payloads.</p><div class="table" id="d0e5159"><p class="title"><b>Table&nbsp;13.&nbsp;<code class="literal">@jakarta.xml.ws.ServiceMode</code> -
+            just with protocol message payloads.</p><div class="table" id="d0e5194"><p class="title"><b>Table&nbsp;13.&nbsp;<code class="literal">@jakarta.xml.ws.ServiceMode</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.ServiceMode -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">value</code></p></td><td><p>Convey whether the
                             <code class="literal">Provider</code> endpoint wants to access
                             then entire message (<code class="literal">MESSAGE</code>) or
@@ -2545,7 +2545,7 @@ SOAPAction: ""
      * messages.
      */</span>
     <span class="ReservedWord">public</span> Service.Mode value() <span class="ReservedWord">default</span> Service.Mode.PAYLOAD;
-}</pre></div></div><div class="section" id="section-0843754606554705"><div class="titlepage"><div><div><h5 class="title">10.3.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5207"><p class="title"><b>Example&nbsp;16.&nbsp;<code class="literal">@jakarta.xml.ws.ServiceMode</code> -
+}</pre></div></div><div class="section" id="section-0843754606554705"><div class="titlepage"><div><div><h5 class="title">10.3.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5242"><p class="title"><b>Example&nbsp;16.&nbsp;<code class="literal">@jakarta.xml.ws.ServiceMode</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@ServiceMode(value = Service.Mode.PAYLOAD)</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl <span class="ReservedWord">implements</span> Provider&lt;Source&gt; {
     <span class="ReservedWord">public</span> Source invoke(Source source) <span class="ReservedWord">throws</span> RemoteException {
@@ -2582,7 +2582,7 @@ SOAPAction: ""
             to uniquely identify a <code class="literal">wsdl:port</code> element inside
             a <code class="literal">wsdl:service</code>. The latter is determined based
             on the value of the <code class="literal">WebServiceClient</code> annotation
-            on the generated service interface itself.</p><div class="table" id="d0e5234"><p class="title"><b>Table&nbsp;14.&nbsp;<code class="literal">@jakarta.xml.ws.WebEndpoint</code> -
+            on the generated service interface itself.</p><div class="table" id="d0e5269"><p class="title"><b>Table&nbsp;14.&nbsp;<code class="literal">@jakarta.xml.ws.WebEndpoint</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.WebEndpoint -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the XML
                             element representing the corresponding port in the
                             WSDL.</p></td><td><p>""</p></td></tr></tbody></table></div></div><br class="table-break"><div class="section" id="section-800546080791241"><div class="titlepage"><div><div><h5 class="title">10.3.5.1.&nbsp;Annotation Type Definition</h5></div></div></div><div class="informalexample"><pre class="programlisting"><span class="Comment">/**
@@ -2606,7 +2606,7 @@ SOAPAction: ""
      * The local name of the endpoint.
      */</span>
     String name() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-969119628218757"><div class="titlepage"><div><div><h5 class="title">10.3.5.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5272"><p class="title"><b>Example&nbsp;17.&nbsp;<code class="literal">@jakarta.xml.ws.WebEndpoint</code> -
+}</pre></div></div><div class="section" id="section-969119628218757"><div class="titlepage"><div><div><h5 class="title">10.3.5.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5307"><p class="title"><b>Example&nbsp;17.&nbsp;<code class="literal">@jakarta.xml.ws.WebEndpoint</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebServiceClient(name = "AddNumbersImplService", 
         targetNamespace = "http://server.fromjava/", 
         wsdlLocation = "http://localhost:8080/jaxws-fromjava/addnumbers" +
@@ -2655,7 +2655,7 @@ SOAPAction: ""
             same name as the one generated from a Java service specific
             exception class. For more information on this topic, please refer
             to section 3.6 of the <a class="link" href="https://jakarta.ee/specifications/xml-web-services/" target="_top">Jakarta XML Web Services
-            </a> specification.</p><div class="table" id="d0e5288"><p class="title"><b>Table&nbsp;15.&nbsp;<code class="literal">@jakarta.xml.ws.WebFault</code> - Description
+            </a> specification.</p><div class="table" id="d0e5323"><p class="title"><b>Table&nbsp;15.&nbsp;<code class="literal">@jakarta.xml.ws.WebFault</code> - Description
                 of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.WebFault - Description&#xA;                of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the XML
                             element representing the corresponding fault in the
                             WSDL.</p></td><td><p>""</p></td></tr><tr><td><p><code class="literal">targetNamespace</code></p></td><td><p>Defines the namespace of the XML
@@ -2695,7 +2695,7 @@ SOAPAction: ""
      * @since JAX-WS 2.2
      */</span>
     <span class="ReservedWord">public</span> String messageName() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-36622117177507"><div class="titlepage"><div><div><h5 class="title">10.3.6.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5348"><p class="title"><b>Example&nbsp;18.&nbsp;<code class="literal">@jakarta.xml.ws.WebFault</code> -
+}</pre></div></div><div class="section" id="section-36622117177507"><div class="titlepage"><div><div><h5 class="title">10.3.6.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5383"><p class="title"><b>Example&nbsp;18.&nbsp;<code class="literal">@jakarta.xml.ws.WebFault</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@jakarta.xml.ws.WebFault(name = "AddNumbersException",
         targetNamespace = "http://server.fromjava/jaxws")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersException_Exception <span class="ReservedWord">extends</span> Exception {
@@ -2722,7 +2722,7 @@ SOAPAction: ""
             to uniquely identify a <code class="literal">wsdl:service</code> element
             inside a WSDL document. This <code class="literal">wsdl:service</code>
             element represents the Web service for which the generated service
-            interface provides a client view.</p><div class="table" id="d0e5367"><p class="title"><b>Table&nbsp;16.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceClient</code> -
+            interface provides a client view.</p><div class="table" id="d0e5402"><p class="title"><b>Table&nbsp;16.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceClient</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.WebServiceClient -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the
                             <code class="literal">wsdl:serviceName</code> in the
                             WSDL.</p></td><td><p>""</p></td></tr><tr><td><p><code class="literal">targetNamespace</code></p></td><td><p>Defines the namespace for the
@@ -2757,7 +2757,7 @@ SOAPAction: ""
      * The location of the WSDL document for the service (a URL).
      */</span>
     String wsdlLocation() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-616559816681746"><div class="titlepage"><div><div><h5 class="title">10.3.7.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5433"><p class="title"><b>Example&nbsp;19.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceClient</code> -
+}</pre></div></div><div class="section" id="section-616559816681746"><div class="titlepage"><div><div><h5 class="title">10.3.7.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5468"><p class="title"><b>Example&nbsp;19.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceClient</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebServiceClient(name = "AddNumbersImplService", 
         targetNamespace = "http://server.fromjava/", 
         wsdlLocation = "http://localhost:8080/jaxws-fromjava/addnumbers" +
@@ -2796,7 +2796,7 @@ SOAPAction: ""
         <span class="ReservedWord">return</span> (AddNumbersImpl) <span class="ReservedWord">super</span>.getPort(ADDNUMBERSIMPLPORT, AddNumbersImpl.<span class="ReservedWord">class</span>);
     }
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-xml-ws-webserviceprovider-outline"><div class="titlepage"><div><div><h4 class="title">10.3.8.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceProvider</code></h4></div></div></div><p>Annotation used to annotate a <code class="literal">Provider</code>
-            implementation class.</p><div class="table" id="d0e5449"><p class="title"><b>Table&nbsp;17.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceProvider</code> -
+            implementation class.</p><div class="table" id="d0e5484"><p class="title"><b>Table&nbsp;17.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceProvider</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.WebServiceProvider -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">targetNamespace</code></p></td><td><p>The XML namespace of the the WSDL and
                             some of the XML elements generated from this web
                             service. Most of the XML elements will be in the
@@ -2837,7 +2837,7 @@ SOAPAction: ""
      * Port name.
      */</span>
     String portName() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-5041062451497706"><div class="titlepage"><div><div><h5 class="title">10.3.8.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5525"><p class="title"><b>Example&nbsp;20.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceProvider</code>
+}</pre></div></div><div class="section" id="section-5041062451497706"><div class="titlepage"><div><div><h5 class="title">10.3.8.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5560"><p class="title"><b>Example&nbsp;20.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceProvider</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@ServiceMode(value = Service.Mode.PAYLOAD)</span>
 <span class="Annotation">@WebServiceProvider(wsdlLocation = "WEB-INF/wsdl/AddNumbers.wsdl")</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> AddNumbersImpl <span class="ReservedWord">implements</span> Provider {
@@ -2871,7 +2871,7 @@ SOAPAction: ""
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-xml-ws-webserviceref-outline"><div class="titlepage"><div><div><h4 class="title">10.3.9.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceRef</code></h4></div></div></div><p>The <code class="literal">WebServiceRef</code> annotation is used to
             define a reference to a web service and (optionally) an injection
             target for it. Web service references are resources in the Jakarta EE
-            sense.</p><div class="table" id="d0e5541"><p class="title"><b>Table&nbsp;18.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceRef</code> -
+            sense.</p><div class="table" id="d0e5576"><p class="title"><b>Table&nbsp;18.&nbsp;<code class="literal">@jakarta.xml.ws.WebServiceRef</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.WebServiceRef -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>The JNDI name of the resource. For
                             field annotations, the default is the field name.
                             For method annotations, the default is the JavaBeans
@@ -2996,7 +2996,7 @@ SOAPAction: ""
             <code class="literal">input</code>, <code class="literal">output</code> and
             <code class="literal">fault</code> messages of the WSDL
             <code class="literal">operation</code> based upon which attributes of the
-            <code class="literal">Action</code> annotation have been specified.</p><div class="table" id="d0e5659"><p class="title"><b>Table&nbsp;19.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Description
+            <code class="literal">Action</code> annotation have been specified.</p><div class="table" id="d0e5694"><p class="title"><b>Table&nbsp;19.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Description
                 of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.Action - Description&#xA;                of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">input</code></p></td><td><p>Explicit value of
                             <code class="literal">Action</code> message addressing
                             property for the <code class="literal">input</code> message of
@@ -3065,7 +3065,7 @@ SOAPAction: ""
      * using {@link FaultAction} annotation.
      */</span>
     FaultAction[] fault() <span class="ReservedWord">default</span> {};
-}</pre></div></div><div class="section" id="section-386040099353688"><div class="titlepage"><div><div><h5 class="title">10.3.10.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5746"><p class="title"><b>Example&nbsp;21.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 1
+}</pre></div></div><div class="section" id="section-386040099353688"><div class="titlepage"><div><div><h5 class="title">10.3.10.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5781"><p class="title"><b>Example&nbsp;21.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 1
                     - Specify explicit values for <code class="literal">Action</code>
                     message addressing property for <code class="literal">input</code>
                     and <code class="literal">output</code> messages.</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@jakarta.jws.WebService</span>
@@ -3091,7 +3091,7 @@ SOAPAction: ""
 
     ...
 
-<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5766"><p class="title"><b>Example&nbsp;22.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 2
+<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5801"><p class="title"><b>Example&nbsp;22.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 2
                     - Specify explicit value for <code class="literal">Action</code>
                     message addressing property for only the
                     <code class="literal">input</code> message.</b></p><div class="example-contents"><p>The default values are used for the
@@ -3119,7 +3119,7 @@ SOAPAction: ""
                     <code class="literal">Action</code> message addressing property for
                     <code class="literal">output</code> message only. In this case, a
                     default value of <code class="literal">wsaw:Action</code> is used
-                    for the <code class="literal">input</code> message.</p></div></div><br class="example-break"><div class="example" id="d0e5802"><p class="title"><b>Example&nbsp;23.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 3
+                    for the <code class="literal">input</code> message.</p></div></div><br class="example-break"><div class="example" id="d0e5837"><p class="title"><b>Example&nbsp;23.&nbsp;<code class="literal">@jakarta.xml.ws.Action</code> - Example 3
                     - <code class="literal">@FaultAction</code></b></p><div class="example-contents"><p>See <code class="literal"><a class="xref" href="ch03.html#javax-xml-ws-faultaction-outline" title="10.3.11.&nbsp;@jakarta.xml.ws.FaultAction"><code class="literal">@jakarta.xml.ws.FaultAction</code></a></code> for an example of
                     how to specify an explicit value for
                     <code class="literal">Action</code> message addressing property for
@@ -3129,7 +3129,7 @@ SOAPAction: ""
             property with the <code class="literal">fault</code> messages of the WSDL
             operation mapped from the exception class.</p><p>The <code class="literal">fault</code> message in the generated WSDL
             operation mapped for <code class="literal">className</code> class contains
-            explicit <code class="literal">wsaw:Action</code> attribute.</p><div class="table" id="d0e5849"><p class="title"><b>Table&nbsp;20.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
+            explicit <code class="literal">wsaw:Action</code> attribute.</p><div class="table" id="d0e5884"><p class="title"><b>Table&nbsp;20.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.ws.FaultAction -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">className</code></p></td><td><p>Name of the exception
                             class</p></td><td><p>there is no default and is
                             required.</p></td></tr><tr><td><p><code class="literal">value</code></p></td><td><p>Value of <code class="literal">Action</code>
@@ -3148,7 +3148,7 @@ SOAPAction: ""
      * property for the exception
      */</span>
     String value() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-139653992039007"><div class="titlepage"><div><div><h5 class="title">10.3.11.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5901"><p class="title"><b>Example&nbsp;24.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
+}</pre></div></div><div class="section" id="section-139653992039007"><div class="titlepage"><div><div><h5 class="title">10.3.11.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e5936"><p class="title"><b>Example&nbsp;24.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
                     Example 1 - Specify explicit values for
                     <code class="literal">Action</code> message addressing property for
                     the <code class="literal">input</code>, <code class="literal">output</code>
@@ -3184,7 +3184,7 @@ SOAPAction: ""
     
     ...
     
-<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5924"><p class="title"><b>Example&nbsp;25.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
+<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5959"><p class="title"><b>Example&nbsp;25.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
                     Example 1 - Specify explicit values for
                     <code class="literal">Action</code> message addressing property if
                     the Java method throws only one service specific
@@ -3215,7 +3215,7 @@ SOAPAction: ""
     
     ...
     
-<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5944"><p class="title"><b>Example&nbsp;26.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
+<span class="ReservedWord">&lt;/definitions&gt;</span></pre></div></div><br class="example-break"><div class="example" id="d0e5979"><p class="title"><b>Example&nbsp;26.&nbsp;<code class="literal">@jakarta.xml.ws.FaultAction</code> -
                     Example 1 - Specify explicit values for
                     <code class="literal">Action</code> message addressing property if
                     the Java method throws more than one service specific
@@ -3260,7 +3260,7 @@ SOAPAction: ""
         <a class="link" href="https://jakarta.ee/specifications/xml-binding/" target="_top">Jakarta XML Binding
         specification</a>.</p><div class="section" id="javax-xml-bind-annotation-xmlrootelement-outline"><div class="titlepage"><div><div><h4 class="title">10.4.1.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlRootElement</code></h4></div></div></div><p>This annotation is used to map a top level class to a global
             element in the XML schema used by the WSDL of the web
-            service.</p><div class="table" id="d0e5975"><p class="title"><b>Table&nbsp;21.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlRootElement</code>
+            service.</p><div class="table" id="d0e6010"><p class="title"><b>Table&nbsp;21.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlRootElement</code>
                 - Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.bind.annotation.XmlRootElement&#xA;                - Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the XML
                             element representing the annotated
                             class</p></td><td><code class="literal">##default</code> &#8211; the name is
@@ -3291,7 +3291,7 @@ SOAPAction: ""
      */</span>
     String name() <span class="ReservedWord">default</span> <span class="String">"##default"</span>;
 
-}</pre></div></div><div class="section" id="section-3077451588388276"><div class="titlepage"><div><div><h5 class="title">10.4.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6026"><p class="title"><b>Example&nbsp;27.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlRootElement</code>
+}</pre></div></div><div class="section" id="section-3077451588388276"><div class="titlepage"><div><div><h5 class="title">10.4.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6061"><p class="title"><b>Example&nbsp;27.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlRootElement</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@XmlRootElement(name = "addNumbers", namespace = "http://server.fromjava/")</span>
 <span class="Annotation">@XmlAccessorType(XmlAccessType.FIELD)</span>
 <span class="Annotation">@XmlType(name = "addNumbers", namespace = "http://server.fromjava/", 
@@ -3319,7 +3319,7 @@ SOAPAction: ""
         <span class="ReservedWord">this</span>.arg1 = arg1;
     }
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-xml-bind-annotation-xmlaccessortype-outline"><div class="titlepage"><div><div><h4 class="title">10.4.2.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlAccessorType</code></h4></div></div></div><p>This annotation is used to specify whether fields or
-            properties are serialized by default.</p><div class="table" id="d0e6039"><p class="title"><b>Table&nbsp;22.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlAccessorType</code>
+            properties are serialized by default.</p><div class="table" id="d0e6074"><p class="title"><b>Table&nbsp;22.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlAccessorType</code>
                 - Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.bind.annotation.XmlAccessorType&#xA;                - Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">value</code></p></td><td><p>Specifies whether fields or properties
                             are serialized by default. The value can be
                             <code class="literal">XmlAccessType.FIELD</code> or
@@ -3380,7 +3380,7 @@ SOAPAction: ""
      * annotations.
      */</span>
     NONE
-}</pre></div></div><div class="section" id="section-6109125632205346"><div class="titlepage"><div><div><h5 class="title">10.4.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6091"><p class="title"><b>Example&nbsp;28.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlAccessorType</code>
+}</pre></div></div><div class="section" id="section-6109125632205346"><div class="titlepage"><div><div><h5 class="title">10.4.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6126"><p class="title"><b>Example&nbsp;28.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlAccessorType</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@XmlRootElement(name = "addNumbers", namespace = "http://server.fromjava/")</span>
 <span class="Annotation">@XmlAccessorType(XmlAccessType.FIELD)</span>
 <span class="Annotation">@XmlType(name = "addNumbers", namespace = "http://server.fromjava/", 
@@ -3412,7 +3412,7 @@ SOAPAction: ""
             represented by properties and fields. A schema type is a data
             container for values represented by schema components within a
             schema type's content model (e.g. Model groups, attributes
-            etc).</p><div class="table" id="d0e6104"><p class="title"><b>Table&nbsp;23.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlType</code> -
+            etc).</p><div class="table" id="d0e6139"><p class="title"><b>Table&nbsp;23.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlType</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.bind.annotation.XmlType -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the XML type
                             representing this class in the XML schema used by
                             the WSDL of the web service</p></td><td>"<code class="literal">##default</code>"</td></tr><tr><td><p><code class="literal">namespace</code></p></td><td><p>Defines the namespace of the XML type
@@ -3498,7 +3498,7 @@ SOAPAction: ""
      * &lt;tt&gt;factoryClass&lt;/tt&gt; factoryClass().
      */</span>
     String factoryMethod() <span class="ReservedWord">default</span> <span class="String">""</span>;
-}</pre></div></div><div class="section" id="section-3949542543211304"><div class="titlepage"><div><div><h5 class="title">10.4.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6176"><p class="title"><b>Example&nbsp;29.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlType</code>
+}</pre></div></div><div class="section" id="section-3949542543211304"><div class="titlepage"><div><div><h5 class="title">10.4.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6211"><p class="title"><b>Example&nbsp;29.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlType</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@XmlRootElement(name = "addNumbers", namespace = "http://server.fromjava/")</span>
 <span class="Annotation">@XmlAccessorType(XmlAccessType.FIELD)</span>
 <span class="Annotation">@XmlType(name = "addNumbers", namespace = "http://server.fromjava/", 
@@ -3527,7 +3527,7 @@ SOAPAction: ""
     }
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="section-147120285802621"><div class="titlepage"><div><div><h4 class="title">10.4.4.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlElement</code></h4></div></div></div><p>This annotation is used to map a property contained in a
             class to a local element in the XML Schema complex type to which
-            the containing class is mapped.</p><div class="table" id="d0e6189"><p class="title"><b>Table&nbsp;24.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlElement</code>
+            the containing class is mapped.</p><div class="table" id="d0e6224"><p class="title"><b>Table&nbsp;24.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlElement</code>
                 - Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.bind.annotation.XmlElement&#xA;                - Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">name</code></p></td><td><p>Defines the local name of the XML
                             element representing the property of a
                             JavaBean</p></td><td><p>"<code class="literal">##default</code>" - the
@@ -3610,7 +3610,7 @@ SOAPAction: ""
      */</span>
     <span class="ReservedWord">static</span> <span class="ReservedWord">final</span> <span class="ReservedWord">class</span> DEFAULT {
     }
-}</pre></div></div><div class="section" id="section-3035378616552507"><div class="titlepage"><div><div><h5 class="title">10.4.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6264"><p class="title"><b>Example&nbsp;30.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlElement</code>
+}</pre></div></div><div class="section" id="section-3035378616552507"><div class="titlepage"><div><div><h5 class="title">10.4.4.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6299"><p class="title"><b>Example&nbsp;30.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlElement</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@XmlRootElement(name = "addNumbers", namespace = "http://server.fromjava/")</span>
 <span class="Annotation">@XmlAccessorType(XmlAccessType.FIELD)</span>
 <span class="Annotation">@XmlType(name = "addNumbers", namespace = "http://server.fromjava/", 
@@ -3638,7 +3638,7 @@ SOAPAction: ""
         <span class="ReservedWord">this</span>.arg1 = arg1;
     }
 }</pre></div></div><br class="example-break"></div></div><div class="section" id="javax-xml-bind-annotation-xmlseealso"><div class="titlepage"><div><div><h4 class="title">10.4.5.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlSeeAlso</code></h4></div></div></div><p>Instructs Jakarta XML Binding to also bind other classes when binding this
-            class.</p><div class="table" id="d0e6277"><p class="title"><b>Table&nbsp;25.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlSeeAlso</code>
+            class.</p><div class="table" id="d0e6312"><p class="title"><b>Table&nbsp;25.&nbsp;<code class="literal">@jakarta.xml.bind.annotation.XmlSeeAlso</code>
                 - Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.xml.bind.annotation.XmlSeeAlso&#xA;                - Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">value</code></p></td><td><p>Other classes that Jakarta XML Binding can use when
                             binding this class</p></td><td><p>{}</p></td></tr></tbody></table></div></div><br class="table-break"><div class="section" id="section-4562047312606827"><div class="titlepage"><div><div><h5 class="title">10.4.5.1.&nbsp;Annotation Type Definition</h5></div></div></div><div class="informalexample"><pre class="programlisting"><span class="Comment">/**
  * Instructs Jakarta XML Binding to also bind other classes when binding this class.
@@ -3692,7 +3692,7 @@ SOAPAction: ""
             that is needed by a web service. It is applied to a field or a
             method for Jakarta XML Web Services endpoints. The container will inject an instance
             of the WebServiceContext resource into the endpoint implementation
-            when it is initialized.</p><div class="table" id="d0e6332"><p class="title"><b>Table&nbsp;26.&nbsp;<code class="literal">@jakarta.annotation.Resource</code> -
+            when it is initialized.</p><div class="table" id="d0e6367"><p class="title"><b>Table&nbsp;26.&nbsp;<code class="literal">@jakarta.annotation.Resource</code> -
                 Description of Properties</b></p><div class="table-contents"><table class="table" summary="@jakarta.annotation.Resource -&#xA;                Description of Properties" border="1"><colgroup><col width="16%"><col width="54%"><col width="30%"></colgroup><thead><tr><th>Property</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td><p><code class="literal">type</code></p></td><td><p>Java type of the
                             resource</p></td><td><p>For field annotations, the default is
                             the type of the field. For method annotations, the
@@ -3711,7 +3711,7 @@ SOAPAction: ""
      * specified.
      */</span>
     Class type() <span class="ReservedWord">default</span> java.lang.Object.<span class="ReservedWord">class</span>;
-}</pre></div></div><div class="section" id="section-3989686945211064"><div class="titlepage"><div><div><h5 class="title">10.5.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6370"><p class="title"><b>Example&nbsp;31.&nbsp;<code class="literal">@jakarta.annotation.Resource</code> -
+}</pre></div></div><div class="section" id="section-3989686945211064"><div class="titlepage"><div><div><h5 class="title">10.5.1.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6405"><p class="title"><b>Example&nbsp;31.&nbsp;<code class="literal">@jakarta.annotation.Resource</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> HelloImpl {
     <span class="Annotation">@Resource</span>
@@ -3757,7 +3757,7 @@ SOAPAction: ""
 <span class="Annotation">@Retention(RetentionPolicy.RUNTIME)</span>
 <span class="Annotation">@Target(ElementType.METHOD)</span>
 <span class="ReservedWord">public</span> <span class="Annotation">@interface</span> PostConstruct {
-}</pre></div></div><div class="section" id="section-76012616986007"><div class="titlepage"><div><div><h5 class="title">10.5.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6392"><p class="title"><b>Example&nbsp;32.&nbsp;<code class="literal">@jakarta.annotation.PostConstruct</code>
+}</pre></div></div><div class="section" id="section-76012616986007"><div class="titlepage"><div><div><h5 class="title">10.5.2.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6427"><p class="title"><b>Example&nbsp;32.&nbsp;<code class="literal">@jakarta.annotation.PostConstruct</code>
                     - Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> HelloImpl {
     <span class="Annotation">@PostConstruct</span>
@@ -3806,7 +3806,7 @@ SOAPAction: ""
 <span class="Annotation">@Retention(RetentionPolicy.RUNTIME)</span>
 <span class="Annotation">@Target(ElementType.METHOD)</span>
 <span class="ReservedWord">public</span> <span class="Annotation">@interface</span> PreDestroy {
-}</pre></div></div><div class="section" id="section-9258638457952977"><div class="titlepage"><div><div><h5 class="title">10.5.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6415"><p class="title"><b>Example&nbsp;33.&nbsp;<code class="literal">@jakarta.annotation.PreDestroy</code> -
+}</pre></div></div><div class="section" id="section-9258638457952977"><div class="titlepage"><div><div><h5 class="title">10.5.3.2.&nbsp;Examples</h5></div></div></div><div class="example" id="d0e6450"><p class="title"><b>Example&nbsp;33.&nbsp;<code class="literal">@jakarta.annotation.PreDestroy</code> -
                     Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Annotation">@WebService</span>
 <span class="ReservedWord">public</span> <span class="ReservedWord">class</span> HelloImpl {
     <span class="ReservedWord">public</span> String echoHello(String name) {
@@ -3828,13 +3828,13 @@ SOAPAction: ""
         In addition to that, Eclipse Implementation of XML Web Services also supports <a class="link" href="http://www.w3.org/Submission/ws-addressing/" target="_top">Member
         Submission</a> version of WS-Addressing. The member submission
         version is supported in an implementation specific way. For
-        compatility reasons, Eclipse Implementation of XML Web Services 4.0.0 also
+        compatility reasons, Eclipse Implementation of XML Web Services 4.0.2 also
         supports wsdls conforming to <a class="link" href="http://www.w3.org/TR/ws-addr-wsdl" target="_top">WSDL Binding</a>
         specification. The subsequent sections describe how the two
         WS-Addressing versions can be enabled/disabled on client and server
         side .</p></div><div class="section" id="why-ws-addressing"><div class="titlepage"><div><div><h3 class="title">11.2.&nbsp;Why WS-Addressing?</h3></div></div></div><p>The subsequent sections explain the different use cases served
         by WS-Addressing.</p><div class="section" id="transport-neutrality"><div class="titlepage"><div><div><h4 class="title">11.2.1.&nbsp;Transport Neutrality</h4></div></div></div><p>This section describes how a message can be sent to a Web
-            service endpoint in transport neutral manner.</p><div class="example" id="d0e6458"><p class="title"><b>Example&nbsp;34.&nbsp;SOAP 1.2 message, without WS-Addressing, sent over
+            service endpoint in transport neutral manner.</p><div class="example" id="d0e6493"><p class="title"><b>Example&nbsp;34.&nbsp;SOAP 1.2 message, without WS-Addressing, sent over
                 HTTP</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">POST /fabrikam/Purchasing HTTP 1.1/POST                    <span class="co" id=""><img src="icons/callouts/1.png" alt="(1)"></span>
 Host: example.com
 SOAPAction: http://example.com/fabrikam/SubmitPO
@@ -3869,7 +3869,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
             bound to <code class="literal">wombat</code> prefix is used but is
             application specific and is thus not re-usable.</p><p>WS-Addressing introduce Message Addressing Properties that
             collectively augment a message to normalize this
-            information.</p><div class="example" id="d0e6509"><p class="title"><b>Example&nbsp;35.&nbsp;SOAP 1.2 message, with WS-Addressing, sent over
+            information.</p><div class="example" id="d0e6544"><p class="title"><b>Example&nbsp;35.&nbsp;SOAP 1.2 message, with WS-Addressing, sent over
                 HTTP</b></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting">POST /fabrikam/Purchasing HTTP 1.1/POST                    <span class="co" id=""><img src="icons/callouts/1.png" alt="(1)"></span>
 Host: example.com
 SOAPAction: http://example.com/fabrikam/SubmitPO
@@ -3921,7 +3921,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
             method on that EPR to do a series of banking operations. On the
             service endpoint, whenever a request is received, the reference
             parameters from the EPR are available as first-class SOAP headers
-            allowing the endpoint to restore the state.</p><p>Eclipse Implementation of XML Web Services 4.0.0 enables <a class="link" href="ch03.html#users-guide-stateful-webservice" title="12.&nbsp;Stateful Webservice">stateful
+            allowing the endpoint to restore the state.</p><p>Eclipse Implementation of XML Web Services 4.0.2 enables <a class="link" href="ch03.html#users-guide-stateful-webservice" title="12.&nbsp;Stateful Webservice">stateful
             Web services</a>&nbsp;to be annotated with
             <code class="literal">com.sun.xml.ws.developer.Stateful</code>
             annotation.</p></div><div class="section" id="simple-and-complex-meps"><div class="titlepage"><div><div><h4 class="title">11.2.3.&nbsp;Simple and Complex MEPs</h4></div></div></div><p>WS-Addressing defines standard <a class="link" href="http://www.w3.org/TR/2006/REC-ws-addr-core-20060509/#abstractmaps" target="_top">Message
@@ -4417,7 +4417,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
         WSDL/Schema documents resolved from the copy of it you have either
         bundled with your client or server or just to resolve it not from
         where a WSDL/schema imports points to but rather from where you want
-        it to be picked up.</p><div class="section" id="section-459374253706355"><div class="titlepage"><div><div><h4 class="title">13.1.1.&nbsp;A Sample catalog file</h4></div></div></div><div class="example" id="d0e7326"><p class="title"><b>Example&nbsp;36.&nbsp;<code class="filename">jax-ws-catalog.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+        it to be picked up.</p><div class="section" id="section-459374253706355"><div class="titlepage"><div><div><h4 class="title">13.1.1.&nbsp;A Sample catalog file</h4></div></div></div><div class="example" id="d0e7361"><p class="title"><b>Example&nbsp;36.&nbsp;<code class="filename">jax-ws-catalog.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
         prefer=" system"&gt;
     
     ...
@@ -4436,7 +4436,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
                         based Web Module </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><code class="filename">WEB-INF/jax-ws-catalog.xml</code></p></li></ul></div></li><li class="listitem"><p>Jakarta Enterprise Web Services based EJB Modules </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><code class="filename">META-INF/jax-ws-catalog.xml</code></p></li></ul></div></li></ul></div><p>For details on XML catalog see <a class="link" href="http://xml.apache.org/commons/components/resolver/resolver-article.html" target="_top">here</a>.</p></div></div></div></div><div lang="en" class="section" id="users-guide-war-file-packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both">14.&nbsp;WAR File Packaging</h2></div></div></div><div class="section" id="section-5694250262578"><div class="titlepage"><div><div><h3 class="title">14.1.&nbsp;The WAR Contents</h3></div></div></div><p>Typically, one creates the WAR file with a GUI development tool
         or with the <code class="literal">ant</code> <code class="literal">war</code> task from
         the generated artifacts from <span class="command"><strong>wsimport</strong></span>,
-        <span class="command"><strong>wsgen</strong></span>, or <span class="command"><strong>annotationProcessing</strong></span> tools.</p><p>For example, a sample WAR file starting from a WSDL file:</p><div class="table" id="d0e7431"><p class="title"><b>Table&nbsp;27.&nbsp;Files contained in WAR when starting from WSDL</b></p><div class="table-contents"><table class="table" summary="Files contained in WAR when starting from WSDL" border="1"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>File</th><th>Description</th></tr></thead><tbody><tr><td><code class="code">WEB-INF/classes/hello/HelloIF.class</code></td><td><p>SEI</p></td></tr><tr><td><code class="code">WEB-INF/classes/hello/HelloImpl.class</code></td><td><p>Endpoint</p></td></tr><tr><td><code class="code">WEB-INF/sun-jaxws.xml</code></td><td><p>Eclipse Implementation of XML Web Services deployment
+        <span class="command"><strong>wsgen</strong></span>, or <span class="command"><strong>annotationProcessing</strong></span> tools.</p><p>For example, a sample WAR file starting from a WSDL file:</p><div class="table" id="d0e7466"><p class="title"><b>Table&nbsp;27.&nbsp;Files contained in WAR when starting from WSDL</b></p><div class="table-contents"><table class="table" summary="Files contained in WAR when starting from WSDL" border="1"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>File</th><th>Description</th></tr></thead><tbody><tr><td><code class="code">WEB-INF/classes/hello/HelloIF.class</code></td><td><p>SEI</p></td></tr><tr><td><code class="code">WEB-INF/classes/hello/HelloImpl.class</code></td><td><p>Endpoint</p></td></tr><tr><td><code class="code">WEB-INF/sun-jaxws.xml</code></td><td><p>Eclipse Implementation of XML Web Services deployment
                         descriptor</p></td></tr><tr><td><code class="code">WEB-INF/web.xml</code></td><td><p>Web deployment descriptor</p></td></tr><tr><td><code class="code">WEB-INF/wsdl/HelloService.wsdl</code></td><td><p>WSDL</p></td></tr><tr><td><code class="code">WEB-INF/wsdl/schema.xsd</code></td><td><p>WSDL imports this Schema</p></td></tr></tbody></table></div></div><br class="table-break"></div><div class="section" id="the-sun-jaxws-xml-file"><div class="titlepage"><div><div><h3 class="title">14.2.&nbsp;The <code class="literal">sun-jaxws.xml</code> File</h3></div></div></div><p>The <code class="literal">&lt;endpoints&gt;</code> element contain one or
         more <code class="literal">&lt;endpoint&gt;</code> elements. Each endpoint
         represents a port in the WSDL and it contains all information about
@@ -4451,7 +4451,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
         <span class="Identifier">version</span>=<span class="String">"2.0"</span><span class="ReservedWord">&gt;</span>
     <span class="ReservedWord">&lt;endpoint</span> <span class="Identifier">name</span>=<span class="String">"MyHello"</span> <span class="Identifier">implementation</span>=<span class="String">"hello.HelloImpl"</span>
             <span class="Identifier">url-pattern</span>=<span class="String">"/hello"</span><span class="ReservedWord">/&gt;</span>
-<span class="ReservedWord">&lt;/endpoints&gt;</span></pre></div><p>Endpoint can have the following attributes:</p><div class="table" id="d0e7533"><p class="title"><b>Table&nbsp;28.&nbsp;<code class="literal">sun-jaxws.xml</code> - Endpoint element
+<span class="ReservedWord">&lt;/endpoints&gt;</span></pre></div><p>Endpoint can have the following attributes:</p><div class="table" id="d0e7568"><p class="title"><b>Table&nbsp;28.&nbsp;<code class="literal">sun-jaxws.xml</code> - Endpoint element
             attributes.</b></p><div class="table-contents"><table class="table" summary="sun-jaxws.xml - Endpoint element&#xA;            attributes." border="1"><colgroup><col width="33%"><col width="33%"><col width="34%"></colgroup><thead><tr><th><p>Attribute</p></th><th><p>Optional</p></th><th><p>Use</p></th></tr></thead><tbody><tr><td><code class="code">name </code></td><td><p>N</p></td><td><p>Name of the endpoint</p></td></tr><tr><td><code class="code">wsdl </code></td><td><p>Y</p></td><td><p>Primary wsdl file location in the WAR
                         file. For e.g.
                         <code class="filename">WEB-INF/wsdl/HelloService.wsdl</code>.
@@ -4550,7 +4550,7 @@ SOAPAction: http://example.com/fabrikam/SubmitPO
         name of WSDL using properties. This overwrites implementor object's
         serviceName, portName from <code class="literal">@WebService</code> annotation.
         The port address for an endpoint is patched only if the corresponding
-        port's service name, and port name in WSDL are matched.</p><div class="example" id="d0e7817"><p class="title"><b>Example&nbsp;37.&nbsp;<code class="literal">Endpoint</code> and
+        port's service name, and port name in WSDL are matched.</p><div class="example" id="d0e7852"><p class="title"><b>Example&nbsp;37.&nbsp;<code class="literal">Endpoint</code> and
             <code class="literal">Properties</code> Example</b></p><div class="example-contents"><pre class="programlisting">Endpoint endpoint = ...
 
 Map&lt;String, Object&gt; map = <span class="ReservedWord">new</span> HashMap&lt;String, Object&gt;();
@@ -4568,7 +4568,7 @@ endpoint.setProperties(map);</pre></div></div><br class="example-break"></div><d
         in <code class="literal">Endpoint()</code> constructor, the default binding is
         <code class="literal">SOAP1.1</code>/<code class="literal">HTTP</code>. Binding object is
         used to configure MTOM, handler chain etc. SOAP binding object is used
-        to configure SOAP binding specifics like roles.</p><p>For example:</p><div class="example" id="d0e7859"><p class="title"><b>Example&nbsp;38.&nbsp;<code class="literal">Endpoint</code> and <code class="literal">Binding</code>
+        to configure SOAP binding specifics like roles.</p><p>For example:</p><div class="example" id="d0e7894"><p class="title"><b>Example&nbsp;38.&nbsp;<code class="literal">Endpoint</code> and <code class="literal">Binding</code>
             Example</b></p><div class="example-contents"><p>The following configures the endpoint for
             <code class="literal">XML/HTTP</code> binding.</p><pre class="programlisting">Endpoint endpoint = Endpoint.create(HTTPBinding.HTTP_BINDING, 
         implementor);</pre><p>Working with a <code class="literal">Binding</code> object:</p><pre class="programlisting"><span class="Comment">// setting MTOM</span>
@@ -4587,7 +4587,7 @@ binding.setHandlerChain(...);</pre></div></div><br class="example-break"></div><
         publishing using metadata facility. When a <code class="literal">Source</code>
         object is created, set <code class="literal">systemId</code> always and make
         sure the imports are resolvable w.r.t
-        <code class="literal">systemId</code>s.</p><div class="example" id="d0e7899"><p class="title"><b>Example&nbsp;39.&nbsp;<code class="literal">Endpoint</code> and <code class="literal">metadata</code>
+        <code class="literal">systemId</code>s.</p><div class="example" id="d0e7934"><p class="title"><b>Example&nbsp;39.&nbsp;<code class="literal">Endpoint</code> and <code class="literal">metadata</code>
             Example</b></p><div class="example-contents"><pre class="programlisting"><span class="Comment">// metadata processing for WSDL, schema files</span>
 List&lt;File&gt; metadataFile =...
 List&lt;Source&gt; metadata = <span class="ReservedWord">new</span> ArrayList&lt;Source&gt;();
@@ -4669,7 +4669,7 @@ WebServiceFeature[] features = { <span class="ReservedWord">new</span> Databindi
         way it's aware of them.
     </p><div class="section" id="external-metadata-xml-per-file"><div class="titlepage"><div><div><h3 class="title">18.1.&nbsp;Configuration files</h3></div></div></div><p>To specify classes' metadata externally, each java class requires separate file. The way how Eclipse Implementation of XML Web Services framework
             handles this metadata depends on attributes of xml root element <code class="option">java-wsdl-mapping</code>:
-        </p><div class="example" id="d0e8021"><p class="title"><b>Example&nbsp;40.&nbsp;<code class="filename">webservices.war/WEB-INF/classes/external-metadata.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        </p><div class="example" id="d0e8056"><p class="title"><b>Example&nbsp;40.&nbsp;<code class="filename">webservices.war/WEB-INF/classes/external-metadata.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;java-wsdl-mapping xmlns="http://xmlns.oracle.com/webservices/jaxws-databinding"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://xmlns.oracle.com/webservices/jaxws-databinding jaxws-ri-external-metadata.xsd"
@@ -4714,7 +4714,7 @@ WebServiceFeature[] features = { <span class="ReservedWord">new</span> Databindi
                         If there are several such files, the option must be repeated before each path.
                         Corresponding ant task supports new nested element "external-metadata", see following example:
 
-                        </p><div class="example" id="d0e8113"><p class="title"><b>Example&nbsp;41.&nbsp;wsgen ant task example: <code class="filename">build.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;wsgen  sei="org.example.server.BlackboxService"
+                        </p><div class="example" id="d0e8148"><p class="title"><b>Example&nbsp;41.&nbsp;wsgen ant task example: <code class="filename">build.xml</code></b></p><div class="example-contents"><pre class="programlisting">&lt;wsgen  sei="org.example.server.BlackboxService"
                 destdir="${build.classes.home}"
                 resourcedestdir="${build.classes.home}"
                 sourcedestdir="${build.classes.home}"
@@ -4741,7 +4741,7 @@ WebServiceFeature[] features = { <span class="ReservedWord">new</span> Databindi
                         <code class="literal">&lt;external-metadata&gt;</code>, saying to a container to parse the resources
                         when doing a deployment:
 
-                        </p><div class="example" id="d0e8133"><p class="title"><b>Example&nbsp;42.&nbsp;<code class="filename">webservice-module.war/WEB-INF/sun-jaxws.xml</code></b></p><div class="example-contents"><pre class="programlisting">
+                        </p><div class="example" id="d0e8168"><p class="title"><b>Example&nbsp;42.&nbsp;<code class="filename">webservice-module.war/WEB-INF/sun-jaxws.xml</code></b></p><div class="example-contents"><pre class="programlisting">
 &lt;?xml encoding="UTF-8" version="1.0" ?&gt;
 &lt;endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0"&gt;
     &lt;endpoint implementation="org.example.server.BlackboxService" url-pattern="/WS" name="WS"&gt;

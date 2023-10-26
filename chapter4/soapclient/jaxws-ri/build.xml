@@ -11,7 +11,7 @@
 
 -->
 
-<project name="XML-WS RI 4.0.0 On Tomcat" default="help" basedir=".">
+<project name="XML-WS RI 4.0.2 On Tomcat" default="help" basedir=".">
     <property environment="env"/>
     <property name="tomcat.home" value="${env.CATALINA_HOME}"/>
     <property name="catalina.home" value="${tomcat.home}"/>
@@ -19,14 +19,14 @@
     <property name="java.home" value="${env.JAVA_HOME}"/>
 
     <target name="glassfish-message">
-        <echo message="NOTE: This script installs/uninstalls XML-WS RI 4.0.0 on Tomcat."/>
-        <echo message="  To install and use XML-WS RI 4.0.0 with GlassFish,"/>
+        <echo message="NOTE: This script installs/uninstalls XML-WS RI 4.0.2 on Tomcat."/>
+        <echo message="  To install and use XML-WS RI 4.0.2 with GlassFish,"/>
         <echo message="  download Eclipse Metro bundle from https://eclipse-ee4j.github.io/metro-wsit/."/>
         <echo/>
     </target>
 
-    <target name="install" depends="update-catalina-props" description="Install XML-WS RI 4.0.0 jars">
-        <echo message="Installing XML-WS RI 4.0.0 for ${catalina.home} ..."/>
+    <target name="install" depends="update-catalina-props" description="Install XML-WS RI 4.0.2 jars">
+        <echo message="Installing XML-WS RI 4.0.2 for ${catalina.home} ..."/>
 
         <mkdir dir="${catalina.lib.home}"/>
         <copy toDir="${catalina.lib.home}" overwrite="true">
@@ -56,10 +56,10 @@
         <echo message="$CATALINA_HOME must be set to the installation directory of Tomcat."/>
         <echo/>
         <echo message="install:"/>
-        <echo message="  Installs XML-WS RI 4.0.0 on Tomcat"/>
+        <echo message="  Installs XML-WS RI 4.0.2 on Tomcat"/>
         <echo/>
         <echo message="uninstall: "/>
-        <echo message="  Uninstalls XML-WS RI 4.0.0 from Tomcat"/>
+        <echo message="  Uninstalls XML-WS RI 4.0.2 from Tomcat"/>
         <echo/>
     </target>
 </project>

@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the artifact package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,10 +24,10 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Add_QNAME = new QName("http://book/", "add");
-    private final static QName _AddResponse_QNAME = new QName("http://book/", "addResponse");
-    private final static QName _Subtract_QNAME = new QName("http://book/", "subtract");
-    private final static QName _SubtractResponse_QNAME = new QName("http://book/", "subtractResponse");
+    private static final QName _Add_QNAME = new QName("http://book/", "add");
+    private static final QName _AddResponse_QNAME = new QName("http://book/", "addResponse");
+    private static final QName _Subtract_QNAME = new QName("http://book/", "subtract");
+    private static final QName _SubtractResponse_QNAME = new QName("http://book/", "subtractResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: artifact
