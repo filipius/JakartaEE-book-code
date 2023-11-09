@@ -2,7 +2,7 @@ package beans;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import jakarta.ejb.Remote;
 
 import data.Student;
 

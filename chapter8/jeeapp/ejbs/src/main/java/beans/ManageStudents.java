@@ -2,12 +2,11 @@ package beans;
 
 import java.util.List;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-
 import data.Student;
+import jakarta.ejb.Stateless;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
 @Stateless
 public class ManageStudents implements IManageStudents {
@@ -23,7 +22,7 @@ public class ManageStudents implements IManageStudents {
 
 	public List<Student> listStudents() {
 		System.out.println("Retrieving students from the database...");
-		TypedQuery<Student> q = em.createQuery("from Student s", Student.class);
+		TypedQuery<Student> q = em.createQuery("select s from Student s", Student.class);
 		List<Student> list = q.getResultList();
 		return list;
 	}
