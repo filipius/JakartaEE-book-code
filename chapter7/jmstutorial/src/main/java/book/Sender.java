@@ -1,11 +1,12 @@
 package book;
 
-import javax.jms.ConnectionFactory;
-import javax.jms.Destination;
-import javax.jms.JMSContext;
-import javax.jms.JMSProducer;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
+import jakarta.jms.ConnectionFactory;
+import jakarta.jms.Destination;
+import jakarta.jms.JMSContext;
+import jakarta.jms.JMSProducer;
 
 public class Sender {
 
